@@ -1,0 +1,1676 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2012                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _e91649cfd8-20210420 OPENFOAM=2012 patch=210414
+Arch   : "LSB;label=32;scalar=64"
+Exec   : pimpleFoam
+Date   : Jun 11 2021
+Time   : 10:24:51
+Host   : scw-a5ymyf
+PID    : 7838
+I/O    : uncollated
+Case   : /home/julian/software/mbdyn-adapter/scalingPitchingCombinedMotion
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Overriding DebugSwitches according to controlDict
+    overset (unregistered)
+    dynamicOversetFvMesh (unregistered)
+    cellVolumeWeight 0;
+
+    inverseDistance 0;
+
+    displacementLaplacian 1;
+
+    motionDiffusivity 1;
+
+Create mesh for time = 0
+
+Selecting dynamicFvMesh dynamicMotionSolverFvMesh
+Selecting motion solver: solidBodyDisplacementLaplacian
+Applying solid body motion to entire mesh
+Selecting solid-body motion function oscillatingRotatingMotion
+Selecting solid-body motion function oscillatingRotatingMotion
+Selecting solid-body motion function rotatingMotion
+Selecting motion interpolation: patchCorrected
+Selecting motion diffusion: quadratic
+Selecting motion diffusion: inversePointDistance
+
+PIMPLE: no residual control data found. Calculations will employ 4 corrector loops
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Selecting incompressible transport model Newtonian
+Selecting turbulence model type RAS
+Selecting RAS turbulence model kOmegaSST
+Selecting patchDistMethod Poisson
+FDICPBiCGStab:  Solving for yPsi, Initial residual = 1, Final residual = 9.906494629e-06, No Iterations 127
+RAS
+{
+    RASModel        kOmegaSST;
+    turbulence      on;
+    printCoeffs     on;
+    alphaK1         0.85;
+    alphaK2         1;
+    alphaOmega1     0.5;
+    alphaOmega2     0.856;
+    gamma1          0.5555555556;
+    gamma2          0.44;
+    beta1           0.075;
+    beta2           0.0828;
+    betaStar        0.09;
+    a1              0.31;
+    b1              1;
+    c1              10;
+    F3              false;
+    decayControl    false;
+    kInf            0;
+    omegaInf        0;
+}
+
+No MRF models present
+
+No finite volume options present
+Constructing face velocity Uf
+
+Courant Number mean: 0 max: 0
+
+Starting time loop
+
+Courant Number mean: 0 max: 0
+Time = 0.0001
+
+PIMPLE: iteration 1
+DICPCG:  Solving for cellDisplacementx, Initial residual = 1, Final residual = 8.854016369e-05, No Iterations 30
+DICPCG:  Solving for cellDisplacementy, Initial residual = 1, Final residual = 9.288484941e-05, No Iterations 20
+FDICPBiCGStab:  Solving for yPsi, Initial residual = 1, Final residual = 9.958417928e-06, No Iterations 122
+Mesh Courant Number mean: 0.01070071518 max: 0.1230620152
+smoothSolver:  Solving for Ux, Initial residual = 1, Final residual = 0.09550431847, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 1, Final residual = 0.0786285038, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 1, Final residual = 0.1835011231, No Iterations 20
+FDICPBiCGStab:  Solving for p, Initial residual = 0.4391102699, Final residual = 0.04277843299, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.05150074753, Final residual = 0.005055272299, No Iterations 18
+time step continuity errors : sum local = 1.785210681e-09, global = -5.570325767e-12, cumulative = -5.570325767e-12
+FDICPBiCGStab:  Solving for p, Initial residual = 0.08418736109, Final residual = 0.00813658212, No Iterations 5
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01403481091, Final residual = 0.001413518851, No Iterations 20
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01204471077, Final residual = 0.001106918725, No Iterations 4
+time step continuity errors : sum local = 4.292775883e-10, global = 8.870978496e-12, cumulative = 3.300652729e-12
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01137535973, Final residual = 0.002065868799, No Iterations 20
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01580392629, Final residual = 0.001517327108, No Iterations 14
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005167680547, Final residual = 0.0004801049253, No Iterations 5
+time step continuity errors : sum local = 1.882419753e-10, global = 8.193301223e-12, cumulative = 1.149395395e-11
+smoothSolver:  Solving for omega, Initial residual = 8.60853084e-06, Final residual = 9.626674962e-05, No Iterations 1000
+bounding omega, min: -7.687319933 max: 1245.409199 average: 3.573759817
+smoothSolver:  Solving for k, Initial residual = 0.9999995718, Final residual = 3431.68222, No Iterations 1000
+PIMPLE: iteration 2
+smoothSolver:  Solving for Ux, Initial residual = 0.006094310425, Final residual = 0.003592279446, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.01358493623, Final residual = 0.008327623657, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02759431357, Final residual = 0.001998163123, No Iterations 2
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002841485368, Final residual = 0.0002814586684, No Iterations 13
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001491849535, Final residual = 0.0001401539395, No Iterations 14
+time step continuity errors : sum local = 5.249429693e-11, global = 9.050765219e-12, cumulative = 2.054471917e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003419177776, Final residual = 0.0003256724776, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0005108346504, Final residual = 9.978649159e-05, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.000306745311, Final residual = 9.689250993e-05, No Iterations 2
+time step continuity errors : sum local = 3.63480105e-11, global = 8.990273074e-12, cumulative = 2.953499225e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001483543302, Final residual = 0.0001474097129, No Iterations 2
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002125739776, Final residual = 9.659345536e-05, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0001250860852, Final residual = 9.331581361e-05, No Iterations 1
+time step continuity errors : sum local = 3.500035805e-11, global = 8.945582614e-12, cumulative = 3.848057486e-11
+smoothSolver:  Solving for omega, Initial residual = 0.0001020168528, Final residual = 0.0001052743334, No Iterations 1000
+bounding omega, min: -64.25799934 max: 1245.429985 average: 3.535754659
+smoothSolver:  Solving for k, Initial residual = 0.2455572454, Final residual = 0.2754326481, No Iterations 1000
+PIMPLE: iteration 3
+smoothSolver:  Solving for Ux, Initial residual = 0.0003327064661, Final residual = 0.003392658939, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.0006832909877, Final residual = 0.007389214656, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003553661386, Final residual = 0.0003360036115, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.000524210365, Final residual = 9.955101146e-05, No Iterations 16
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0005471686788, Final residual = 9.842162061e-05, No Iterations 2
+time step continuity errors : sum local = 3.687807887e-11, global = 8.900810115e-12, cumulative = 4.738138497e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001857885813, Final residual = 0.0001855974267, No Iterations 5
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0003756641019, Final residual = 9.7427964e-05, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002118909304, Final residual = 9.806212492e-05, No Iterations 1
+time step continuity errors : sum local = 3.672192039e-11, global = 8.852327206e-12, cumulative = 5.623371218e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002583047579, Final residual = 9.87836542e-05, No Iterations 4
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0001304918134, Final residual = 9.587942116e-05, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 9.693804829e-05, Final residual = 9.61817352e-05, No Iterations 1
+time step continuity errors : sum local = 3.601420763e-11, global = 8.828982948e-12, cumulative = 6.506269513e-11
+smoothSolver:  Solving for omega, Initial residual = 0.0001133986654, Final residual = 0.0001047748933, No Iterations 1000
+bounding omega, min: -64.76520265 max: 1245.570621 average: 3.532948404
+smoothSolver:  Solving for k, Initial residual = 0.3241996097, Final residual = 0.3261589768, No Iterations 1000
+PIMPLE: iteration 4
+smoothSolver:  Solving for Ux, Initial residual = 1.373488727e-05, Final residual = 0.003557999434, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 2.785959039e-05, Final residual = 0.007576177001, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01691393116, Final residual = 0.0009532871748, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001219592255, Final residual = 0.0001165366709, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.000359355447, Final residual = 9.259947505e-05, No Iterations 3
+time step continuity errors : sum local = 3.638221591e-11, global = 8.771737842e-12, cumulative = 7.383443297e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002133327333, Final residual = 0.000211297111, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0003673807066, Final residual = 9.27591269e-05, No Iterations 5
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0001771396354, Final residual = 8.870129994e-05, No Iterations 1
+time step continuity errors : sum local = 3.485102387e-11, global = 8.732784809e-12, cumulative = 8.256721778e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0001831929929, Final residual = 9.741075244e-05, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0001021463344, Final residual = 8.824284902e-05, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 8.975583e-05, Final residual = 8.255133426e-05, No Iterations 1
+time step continuity errors : sum local = 3.243223863e-11, global = 8.722073223e-12, cumulative = 9.1289291e-11
+smoothSolver:  Solving for omega, Initial residual = 0.0001137687057, Final residual = 0.0001062596728, No Iterations 1000
+bounding omega, min: -64.77733027 max: 1245.488081 average: 3.533428574
+smoothSolver:  Solving for k, Initial residual = 0.3187119934, Final residual = 0.323364815, No Iterations 1000
+ExecutionTime = 6.4 s  ClockTime = 6 s
+
+Courant Number mean: 0.01070043268 max: 0.1668366858
+Time = 0.0002
+
+PIMPLE: iteration 1
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0.3326144403, Final residual = 9.87709403e-05, No Iterations 17
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0.3336427611, Final residual = 9.954452436e-05, No Iterations 12
+FDICPBiCGStab:  Solving for yPsi, Initial residual = 0.06626862497, Final residual = 9.96197692e-06, No Iterations 75
+Mesh Courant Number mean: 0.0107006392 max: 0.1232133598
+smoothSolver:  Solving for Ux, Initial residual = 0.1010273798, Final residual = 0.005988421374, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.1856837134, Final residual = 0.01145051373, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.2385657878, Final residual = 0.03522419279, No Iterations 20
+FDICPBiCGStab:  Solving for p, Initial residual = 0.5413620499, Final residual = 0.05241350638, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1534824718, Final residual = 0.0148834116, No Iterations 18
+time step continuity errors : sum local = 1.661201687e-09, global = 2.238493759e-11, cumulative = 1.136742286e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.3108778724, Final residual = 0.03082246966, No Iterations 5
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0753050841, Final residual = 0.0073580513, No Iterations 20
+FDICPBiCGStab:  Solving for p, Initial residual = 0.06522940907, Final residual = 0.006193140916, No Iterations 4
+time step continuity errors : sum local = 4.171748697e-10, global = 1.05746482e-11, cumulative = 1.242488768e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0659292469, Final residual = 0.01051980344, No Iterations 20
+FDICPBiCGStab:  Solving for p, Initial residual = 0.08589447933, Final residual = 0.008168646525, No Iterations 14
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02906289153, Final residual = 0.002660092377, No Iterations 5
+time step continuity errors : sum local = 1.767821269e-10, global = 1.030347968e-11, cumulative = 1.345523565e-10
+smoothSolver:  Solving for omega, Initial residual = 4.645928505e-06, Final residual = 0.0001096147449, No Iterations 1000
+bounding omega, min: -6.667978197 max: 1245.74924 average: 3.632428549
+smoothSolver:  Solving for k, Initial residual = 0.004985269269, Final residual = 0.2916636606, No Iterations 1000
+PIMPLE: iteration 2
+smoothSolver:  Solving for Ux, Initial residual = 0.0003000917095, Final residual = 0.003128161891, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.0005289320742, Final residual = 0.006100224994, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.06749652351, Final residual = 0.009351975539, No Iterations 20
+FDICPBiCGStab:  Solving for p, Initial residual = 0.08572671892, Final residual = 0.008546354526, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01445838267, Final residual = 0.001445731544, No Iterations 17
+time step continuity errors : sum local = 9.497533299e-11, global = 9.322882241e-12, cumulative = 1.438752387e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02787155726, Final residual = 0.002508846445, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005730358256, Final residual = 0.00058362362, No Iterations 20
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004043393987, Final residual = 0.0004021571054, No Iterations 11
+time step continuity errors : sum local = 2.628313675e-11, global = 8.033823699e-12, cumulative = 1.519090624e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004516245998, Final residual = 0.0006294799094, No Iterations 20
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004870891125, Final residual = 0.000486281924, No Iterations 15
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001737633163, Final residual = 0.000168325404, No Iterations 7
+time step continuity errors : sum local = 1.104023652e-11, global = 7.36723685e-12, cumulative = 1.592762993e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001114928475, Final residual = 0.0001062676056, No Iterations 1000
+bounding omega, min: -3.400605898 max: 1245.814339 average: 3.633463342
+smoothSolver:  Solving for k, Initial residual = 0.118896348, Final residual = 0.1162372982, No Iterations 1000
+PIMPLE: iteration 3
+smoothSolver:  Solving for Ux, Initial residual = 0.000283933658, Final residual = 0.003142619402, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.0005709064877, Final residual = 0.006620786014, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01370108846, Final residual = 0.0011681617, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002056975099, Final residual = 0.0002014059421, No Iterations 13
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001112341969, Final residual = 0.0001278118421, No Iterations 20
+time step continuity errors : sum local = 8.311562025e-12, global = 6.655110653e-12, cumulative = 1.659314099e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01035965997, Final residual = 0.001006261945, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001796072501, Final residual = 0.0001764589831, No Iterations 14
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001080176086, Final residual = 0.0001137118379, No Iterations 20
+time step continuity errors : sum local = 7.40236522e-12, global = 6.16547533e-12, cumulative = 1.720968853e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0009318514746, Final residual = 0.0001244114807, No Iterations 20
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0003603045899, Final residual = 9.643992309e-05, No Iterations 4
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0001414105416, Final residual = 9.482477127e-05, No Iterations 1
+time step continuity errors : sum local = 6.201276775e-12, global = 5.621569693e-12, cumulative = 1.777184549e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001083336887, Final residual = 0.0001086673119, No Iterations 1000
+bounding omega, min: -6.637522623 max: 1245.821801 average: 3.633071818
+smoothSolver:  Solving for k, Initial residual = 0.1160027871, Final residual = 0.118462058, No Iterations 1000
+PIMPLE: iteration 4
+smoothSolver:  Solving for Ux, Initial residual = 2.483128471e-05, Final residual = 0.003325678037, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 5.135138075e-05, Final residual = 0.00715847564, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.09684883755, Final residual = 0.005369456412, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.007345825127, Final residual = 0.0006908689322, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002367561662, Final residual = 0.0002264627641, No Iterations 15
+time step continuity errors : sum local = 1.312862727e-11, global = 5.439637961e-12, cumulative = 1.831580929e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01442353108, Final residual = 0.001442346549, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002483197013, Final residual = 0.0002370611723, No Iterations 12
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001402603366, Final residual = 0.0001344531165, No Iterations 8
+time step continuity errors : sum local = 7.739406793e-12, global = 5.295137125e-12, cumulative = 1.8845323e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001018893311, Final residual = 9.90392476e-05, No Iterations 9
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002564025539, Final residual = 9.842187808e-05, No Iterations 2
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0001043703644, Final residual = 9.842347401e-05, No Iterations 1
+time step continuity errors : sum local = 5.667797569e-12, global = 5.252076719e-12, cumulative = 1.937053068e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001113390203, Final residual = 0.0001066882846, No Iterations 1000
+bounding omega, min: -3.399784361 max: 1245.822579 average: 3.633545049
+smoothSolver:  Solving for k, Initial residual = 0.1177226639, Final residual = 0.1157180037, No Iterations 1000
+ExecutionTime = 12.5 s  ClockTime = 12 s
+
+Courant Number mean: 0.01070035636 max: 0.1641203024
+Time = 0.0003
+
+PIMPLE: iteration 1
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0.1997263845, Final residual = 7.460779181e-05, No Iterations 17
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0.2001669983, Final residual = 7.874477738e-05, No Iterations 12
+FDICPBiCGStab:  Solving for yPsi, Initial residual = 0.003023231685, Final residual = 9.416199557e-06, No Iterations 41
+Mesh Courant Number mean: 0.01070072787 max: 0.1232379382
+smoothSolver:  Solving for Ux, Initial residual = 0.001809258959, Final residual = 0.003174068269, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.003372005273, Final residual = 0.0068057095, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1308035813, Final residual = 0.01278213398, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01689050231, Final residual = 0.001681618531, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.00856375598, Final residual = 0.0008478373996, No Iterations 14
+time step continuity errors : sum local = 4.490780618e-11, global = 1.948029073e-12, cumulative = 1.956533358e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02006151192, Final residual = 0.001884297999, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002997107428, Final residual = 0.0004182293907, No Iterations 20
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002455710179, Final residual = 0.0002453684031, No Iterations 13
+time step continuity errors : sum local = 1.297369111e-11, global = -2.412394573e-13, cumulative = 1.954120964e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.007375030088, Final residual = 0.0006056847809, No Iterations 2
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0008793111789, Final residual = 0.000120025302, No Iterations 20
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0006696686945, Final residual = 9.798119592e-05, No Iterations 5
+time step continuity errors : sum local = 5.182067785e-12, global = -4.827659247e-13, cumulative = 1.949293304e-10
+smoothSolver:  Solving for omega, Initial residual = 6.441902512e-06, Final residual = 0.0001116701782, No Iterations 1000
+bounding omega, min: -6.446668996 max: 1246.094224 average: 3.661384754
+smoothSolver:  Solving for k, Initial residual = 0.003785264572, Final residual = 0.1144548531, No Iterations 1000
+PIMPLE: iteration 2
+smoothSolver:  Solving for Ux, Initial residual = 9.714634564e-05, Final residual = 0.002954080249, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.0001912676071, Final residual = 0.006621820202, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02437312836, Final residual = 0.002120705043, No Iterations 2
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003201840327, Final residual = 0.00030012007, No Iterations 13
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001988111994, Final residual = 0.0001987142292, No Iterations 9
+time step continuity errors : sum local = 1.030099293e-11, global = -7.832248746e-13, cumulative = 1.941461056e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01318484815, Final residual = 0.001232900352, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002235581721, Final residual = 0.0002115202434, No Iterations 12
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001230208315, Final residual = 0.0001176198097, No Iterations 8
+time step continuity errors : sum local = 6.08503333e-12, global = -8.89631055e-13, cumulative = 1.932564745e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001484970504, Final residual = 0.0001425528839, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002336761855, Final residual = 9.642342185e-05, No Iterations 4
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0001330154722, Final residual = 9.21260517e-05, No Iterations 1
+time step continuity errors : sum local = 4.76632502e-12, global = -8.980756047e-13, cumulative = 1.923583989e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001136096699, Final residual = 0.0001092653683, No Iterations 1000
+bounding omega, min: -0.9530335727 max: 1246.163493 average: 3.663005471
+smoothSolver:  Solving for k, Initial residual = 0.06146081181, Final residual = 0.06055611544, No Iterations 1000
+PIMPLE: iteration 3
+smoothSolver:  Solving for Ux, Initial residual = 5.326450511e-06, Final residual = 0.002948824251, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 1.17193993e-05, Final residual = 0.006623096272, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01408186119, Final residual = 0.001339520436, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.00246796087, Final residual = 0.000234158515, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001310618425, Final residual = 0.0001210040981, No Iterations 9
+time step continuity errors : sum local = 6.262384673e-12, global = -9.825699116e-13, cumulative = 1.91375829e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0128600076, Final residual = 0.001212229805, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002213774202, Final residual = 0.0002100495577, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001192410053, Final residual = 0.0001108194206, No Iterations 8
+time step continuity errors : sum local = 5.726593055e-12, global = -1.031968169e-12, cumulative = 1.903438608e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0008876610389, Final residual = 9.217971104e-05, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002067709271, Final residual = 9.113834353e-05, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 9.430412441e-05, Final residual = 8.467556184e-05, No Iterations 1
+time step continuity errors : sum local = 4.375836092e-12, global = -1.036163443e-12, cumulative = 1.893076974e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001094966882, Final residual = 0.0001113412753, No Iterations 1000
+bounding omega, min: -6.45196187 max: 1246.167106 average: 3.662373815
+smoothSolver:  Solving for k, Initial residual = 0.06012548283, Final residual = 0.06106176938, No Iterations 1000
+PIMPLE: iteration 4
+smoothSolver:  Solving for Ux, Initial residual = 1.15914629e-06, Final residual = 0.003104696492, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 2.655723317e-06, Final residual = 0.006989244534, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1164531484, Final residual = 0.006293708357, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.008776478042, Final residual = 0.0008506364252, No Iterations 7
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002696684039, Final residual = 0.0002677927737, No Iterations 12
+time step continuity errors : sum local = 1.181039092e-11, global = -1.049264664e-12, cumulative = 1.882584327e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0187542315, Final residual = 0.001746642619, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.00316309512, Final residual = 0.0002801442159, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001688449051, Final residual = 0.0001658440807, No Iterations 6
+time step continuity errors : sum local = 7.239594101e-12, global = -1.055873079e-12, cumulative = 1.872025596e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001271910286, Final residual = 0.0001256398373, No Iterations 7
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0003070469297, Final residual = 9.767965226e-05, No Iterations 4
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0001298545305, Final residual = 9.572305676e-05, No Iterations 1
+time step continuity errors : sum local = 4.177307862e-12, global = -1.059479548e-12, cumulative = 1.861430801e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001137598278, Final residual = 0.0001093198588, No Iterations 1000
+bounding omega, min: -0.9262531144 max: 1246.167291 average: 3.663114749
+smoothSolver:  Solving for k, Initial residual = 0.06097662546, Final residual = 0.06010231093, No Iterations 1000
+ExecutionTime = 17.77 s  ClockTime = 17 s
+
+Courant Number mean: 0.01070044446 max: 0.1621280964
+Time = 0.0004
+
+PIMPLE: iteration 1
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0.1427266725, Final residual = 9.179479783e-05, No Iterations 12
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0.142958005, Final residual = 9.852835783e-05, No Iterations 9
+FDICPBiCGStab:  Solving for yPsi, Initial residual = 0.0002434201995, Final residual = 9.957850707e-06, No Iterations 5
+Mesh Courant Number mean: 0.01070059954 max: 0.1232597525
+smoothSolver:  Solving for Ux, Initial residual = 0.001567758906, Final residual = 0.002959843697, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.003091642975, Final residual = 0.0066492667, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.09290495175, Final residual = 0.007338860913, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.008863644156, Final residual = 0.0008612449127, No Iterations 7
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002752637829, Final residual = 0.0002663640491, No Iterations 12
+time step continuity errors : sum local = 1.212837508e-11, global = -6.934688213e-12, cumulative = 1.792083919e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01752036256, Final residual = 0.001612214959, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002690026471, Final residual = 0.0002587039706, No Iterations 13
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001531205518, Final residual = 0.0001631400399, No Iterations 20
+time step continuity errors : sum local = 7.426347978e-12, global = -6.644470769e-12, cumulative = 1.725639211e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004923720326, Final residual = 0.0004547943512, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0005552312299, Final residual = 0.0002280915767, No Iterations 20
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0005813692639, Final residual = 0.0001985993687, No Iterations 20
+time step continuity errors : sum local = 8.975847476e-12, global = -5.132311543e-12, cumulative = 1.674316096e-10
+smoothSolver:  Solving for omega, Initial residual = 8.228388859e-06, Final residual = 0.0001144185139, No Iterations 1000
+bounding omega, min: -6.244195578 max: 1246.448762 average: 3.685887044
+smoothSolver:  Solving for k, Initial residual = 0.002981403135, Final residual = 0.06121528225, No Iterations 1000
+PIMPLE: iteration 2
+smoothSolver:  Solving for Ux, Initial residual = 7.605540047e-05, Final residual = 0.002774569014, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.0001590893961, Final residual = 0.006516531673, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02364154231, Final residual = 0.002332185583, No Iterations 2
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003385717497, Final residual = 0.0003209199386, No Iterations 14
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002229036548, Final residual = 0.0002189457372, No Iterations 8
+time step continuity errors : sum local = 9.672561028e-12, global = -5.451507029e-12, cumulative = 1.619801025e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01525887906, Final residual = 0.001435638461, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002619790242, Final residual = 0.0002530586027, No Iterations 12
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001420321448, Final residual = 0.0001414895542, No Iterations 11
+time step continuity errors : sum local = 6.228278248e-12, global = -5.353323142e-12, cumulative = 1.566267794e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.00147182497, Final residual = 0.000146596408, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002743481896, Final residual = 0.0002167992735, No Iterations 20
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0007853763918, Final residual = 9.964730647e-05, No Iterations 16
+time step continuity errors : sum local = 4.334352949e-12, global = -3.401788725e-12, cumulative = 1.532249907e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001161823566, Final residual = 0.0001121588593, No Iterations 1000
+bounding omega, min: -1.688598038 max: 1246.517193 average: 3.688495608
+smoothSolver:  Solving for k, Initial residual = 0.03716112796, Final residual = 0.03674531783, No Iterations 1000
+PIMPLE: iteration 3
+smoothSolver:  Solving for Ux, Initial residual = 1.020705811e-05, Final residual = 0.002763512387, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 2.460789136e-05, Final residual = 0.006515228977, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01681777959, Final residual = 0.00159652658, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.00293445355, Final residual = 0.0002885874257, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001566217659, Final residual = 0.0001484287355, No Iterations 10
+time step continuity errors : sum local = 6.459819385e-12, global = -3.381665728e-12, cumulative = 1.498433249e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0153190766, Final residual = 0.001448569666, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002643607911, Final residual = 0.0002615123809, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.00143233791, Final residual = 0.0001424743399, No Iterations 8
+time step continuity errors : sum local = 6.181926763e-12, global = -3.327686343e-12, cumulative = 1.465156386e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001058906222, Final residual = 0.000102759655, No Iterations 9
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002684391226, Final residual = 9.934386257e-05, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0001102665994, Final residual = 9.693912684e-05, No Iterations 1
+time step continuity errors : sum local = 4.205155916e-12, global = -3.309948228e-12, cumulative = 1.432056904e-10
+smoothSolver:  Solving for omega, Initial residual = 0.000112355933, Final residual = 0.0001141591967, No Iterations 1000
+bounding omega, min: -6.248499689 max: 1246.520652 average: 3.687759525
+smoothSolver:  Solving for k, Initial residual = 0.03647738852, Final residual = 0.03699955617, No Iterations 1000
+PIMPLE: iteration 4
+smoothSolver:  Solving for Ux, Initial residual = 1.523414163e-06, Final residual = 0.002911086593, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 3.802226291e-06, Final residual = 0.006861962601, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1331739557, Final residual = 0.007171157376, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01013406877, Final residual = 0.001004887408, No Iterations 7
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003223485737, Final residual = 0.0002986645595, No Iterations 13
+time step continuity errors : sum local = 1.074725853e-11, global = -3.214623915e-12, cumulative = 1.399910665e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02291830584, Final residual = 0.002114947605, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003861388038, Final residual = 0.0003559610492, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002058812971, Final residual = 0.0002004577264, No Iterations 7
+time step continuity errors : sum local = 7.118708651e-12, global = -3.152993977e-12, cumulative = 1.368380725e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001583668121, Final residual = 0.0001571177827, No Iterations 7
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0003800681158, Final residual = 9.823031506e-05, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002528298844, Final residual = 9.806419012e-05, No Iterations 1
+time step continuity errors : sum local = 3.478632562e-12, global = -3.067405861e-12, cumulative = 1.337706666e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001165304217, Final residual = 0.0001120055827, No Iterations 1000
+bounding omega, min: -1.688130358 max: 1246.520824 average: 3.688581928
+smoothSolver:  Solving for k, Initial residual = 0.03689838055, Final residual = 0.03633119447, No Iterations 1000
+ExecutionTime = 23.24 s  ClockTime = 23 s
+
+Courant Number mean: 0.01070031514 max: 0.160359657
+Time = 0.0005
+
+PIMPLE: iteration 1
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0.1110504895, Final residual = 8.539260667e-05, No Iterations 14
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0.1111907485, Final residual = 9.712709387e-05, No Iterations 9
+FDICPBiCGStab:  Solving for yPsi, Initial residual = 2.825362659e-05, Final residual = 9.617263863e-06, No Iterations 2
+Mesh Courant Number mean: 0.01070072139 max: 0.123279284
+smoothSolver:  Solving for Ux, Initial residual = 0.001067027305, Final residual = 0.002774182198, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.002191067086, Final residual = 0.006520511232, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1029085349, Final residual = 0.006802927067, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.007930453535, Final residual = 0.0007737606138, No Iterations 7
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002393955944, Final residual = 0.0002338070075, No Iterations 11
+time step continuity errors : sum local = 9.292060517e-12, global = -4.846809998e-12, cumulative = 1.289238566e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01956733356, Final residual = 0.001800259165, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003022972499, Final residual = 0.0002990211261, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001646402952, Final residual = 0.0001596197999, No Iterations 10
+time step continuity errors : sum local = 6.351515126e-12, global = -4.725517984e-12, cumulative = 1.241983386e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.00519287556, Final residual = 0.0004414246299, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0005310815991, Final residual = 0.0001554694573, No Iterations 20
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0005671532534, Final residual = 0.0001565948423, No Iterations 20
+time step continuity errors : sum local = 6.210929157e-12, global = -3.753470696e-12, cumulative = 1.204448679e-10
+smoothSolver:  Solving for omega, Initial residual = 1.007631855e-05, Final residual = 0.0001174665797, No Iterations 1000
+bounding omega, min: -6.032838354 max: 1246.774345 average: 3.713927498
+smoothSolver:  Solving for k, Initial residual = 0.002398888468, Final residual = 0.03759441407, No Iterations 1000
+PIMPLE: iteration 2
+smoothSolver:  Solving for Ux, Initial residual = 6.042266963e-05, Final residual = 0.002620302347, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.0001292136103, Final residual = 0.006430918291, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02438558146, Final residual = 0.002120577716, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003667597327, Final residual = 0.0003521736436, No Iterations 12
+FDICPBiCGStab:  Solving for p, Initial residual = 0.00206744346, Final residual = 0.0002066418878, No Iterations 9
+time step continuity errors : sum local = 8.025604248e-12, global = -3.759441887e-12, cumulative = 1.166854261e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01738206198, Final residual = 0.001621360761, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002977610398, Final residual = 0.0002958147746, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.00158771646, Final residual = 0.000156288618, No Iterations 9
+time step continuity errors : sum local = 6.04615122e-12, global = -3.69148295e-12, cumulative = 1.129939431e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001504051054, Final residual = 0.0001454449629, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002945495919, Final residual = 0.0001204695002, No Iterations 20
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0004000203696, Final residual = 0.0001154805101, No Iterations 20
+time step continuity errors : sum local = 4.454207295e-12, global = -2.925163081e-12, cumulative = 1.1006878e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001196225459, Final residual = 0.0001144213156, No Iterations 1000
+bounding omega, min: -16.35539824 max: 1246.841772 average: 3.71548925
+smoothSolver:  Solving for k, Initial residual = 0.02442077255, Final residual = 0.02412870292, No Iterations 1000
+PIMPLE: iteration 3
+smoothSolver:  Solving for Ux, Initial residual = 5.575047237e-06, Final residual = 0.002613548801, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 1.373506217e-05, Final residual = 0.006418787049, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01910823067, Final residual = 0.001803149208, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003323731391, Final residual = 0.0003151937478, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001747225854, Final residual = 0.0001659901781, No Iterations 9
+time step continuity errors : sum local = 6.395572884e-12, global = -2.835864732e-12, cumulative = 1.072329153e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01739506855, Final residual = 0.001628971472, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002989559052, Final residual = 0.0002817134013, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001589492169, Final residual = 0.0001555006002, No Iterations 8
+time step continuity errors : sum local = 5.969950909e-12, global = -2.786496547e-12, cumulative = 1.044464187e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001184211425, Final residual = 0.0001178655401, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002911026732, Final residual = 9.734638059e-05, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002013522718, Final residual = 9.468882605e-05, No Iterations 1
+time step continuity errors : sum local = 3.63315795e-12, global = -2.724402137e-12, cumulative = 1.017220166e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001156413431, Final residual = 0.0001164381438, No Iterations 1000
+bounding omega, min: -16.35235695 max: 1246.90796 average: 3.714671352
+smoothSolver:  Solving for k, Initial residual = 0.02392724173, Final residual = 0.02426404037, No Iterations 1000
+PIMPLE: iteration 4
+smoothSolver:  Solving for Ux, Initial residual = 1.356568665e-06, Final residual = 0.002752278248, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 3.555586889e-06, Final residual = 0.006758678201, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1448458202, Final residual = 0.007814087815, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01113788624, Final residual = 0.001110010052, No Iterations 7
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003638114778, Final residual = 0.000353148087, No Iterations 12
+time step continuity errors : sum local = 1.103005956e-11, global = -2.646884165e-12, cumulative = 9.907513244e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02646274721, Final residual = 0.00244341579, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.00447274048, Final residual = 0.0003951676084, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002354445816, Final residual = 0.0002276201276, No Iterations 7
+time step continuity errors : sum local = 6.997847611e-12, global = -2.597317154e-12, cumulative = 9.647781529e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001818195056, Final residual = 0.0001760867731, No Iterations 7
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0004304989014, Final residual = 9.755186251e-05, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002684762822, Final residual = 9.750609208e-05, No Iterations 1
+time step continuity errors : sum local = 2.99447356e-12, global = -2.537218861e-12, cumulative = 9.394059643e-11
+smoothSolver:  Solving for omega, Initial residual = 0.000119805496, Final residual = 0.0001143021165, No Iterations 1000
+bounding omega, min: -16.37413852 max: 1246.848336 average: 3.715490942
+smoothSolver:  Solving for k, Initial residual = 0.02425617901, Final residual = 0.02390029597, No Iterations 1000
+ExecutionTime = 28.49 s  ClockTime = 28 s
+
+Courant Number mean: 0.01070043716 max: 0.1588560571
+Time = 0.0006
+
+PIMPLE: iteration 1
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0.09086694454, Final residual = 7.2345783e-05, No Iterations 12
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0.0909751377, Final residual = 9.157309483e-05, No Iterations 7
+FDICPBiCGStab:  Solving for yPsi, Initial residual = 1.253494621e-05, Final residual = 9.81197662e-06, No Iterations 1
+Mesh Courant Number mean: 0.01070066997 max: 0.1233034314
+smoothSolver:  Solving for Ux, Initial residual = 0.0008902085178, Final residual = 0.002620665842, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.001907564864, Final residual = 0.006429335626, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1182144459, Final residual = 0.007559068977, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.008558313627, Final residual = 0.0007754871481, No Iterations 7
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002533989905, Final residual = 0.0002435336321, No Iterations 9
+time step continuity errors : sum local = 8.696344087e-12, global = -1.988467978e-12, cumulative = 9.195212845e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0216290474, Final residual = 0.002005885641, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.00338310722, Final residual = 0.0003381358336, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001770254276, Final residual = 0.0001715819436, No Iterations 8
+time step continuity errors : sum local = 6.134924458e-12, global = -1.946093175e-12, cumulative = 9.000603528e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005764514168, Final residual = 0.0004326696719, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0005156423315, Final residual = 9.992741434e-05, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002842091852, Final residual = 9.648428021e-05, No Iterations 2
+time step continuity errors : sum local = 3.449797696e-12, global = -1.939323876e-12, cumulative = 8.80667114e-11
+smoothSolver:  Solving for omega, Initial residual = 1.210231295e-05, Final residual = 0.0001198642344, No Iterations 1000
+bounding omega, min: -5.818238544 max: 1247.135181 average: 3.756909117
+smoothSolver:  Solving for k, Initial residual = 0.001953883383, Final residual = 0.0248333894, No Iterations 1000
+bounding k, min: -3.112038891e-06 max: 0.01143275294 average: 0.0002268300117
+PIMPLE: iteration 2
+smoothSolver:  Solving for Ux, Initial residual = 5.104242137e-05, Final residual = 0.002479177691, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.0001146715039, Final residual = 0.006299494748, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02518032235, Final residual = 0.002284627467, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003968498272, Final residual = 0.0003924775125, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002163356815, Final residual = 0.0002057242544, No Iterations 9
+time step continuity errors : sum local = 7.237425311e-12, global = -1.866961522e-12, cumulative = 8.619974988e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01921550438, Final residual = 0.001780645416, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.00328022728, Final residual = 0.0002971598696, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001725428886, Final residual = 0.0001627026558, No Iterations 8
+time step continuity errors : sum local = 5.698466159e-12, global = -1.841845676e-12, cumulative = 8.43579042e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001537296354, Final residual = 0.0001535772996, No Iterations 5
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0003021278711, Final residual = 9.989383069e-05, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.000168764635, Final residual = 9.97159844e-05, No Iterations 1
+time step continuity errors : sum local = 3.491789542e-12, global = -1.833749266e-12, cumulative = 8.252415494e-11
+smoothSolver:  Solving for omega, Initial residual = 0.0001217148629, Final residual = 0.000116768584, No Iterations 1000
+bounding omega, min: -15.8859646 max: 1247.266627 average: 3.757419844
+smoothSolver:  Solving for k, Initial residual = 0.01683492757, Final residual = 0.01667413564, No Iterations 1000
+bounding k, min: -6.722456637e-05 max: 0.01161152891 average: 0.0002271310898
+PIMPLE: iteration 3
+smoothSolver:  Solving for Ux, Initial residual = 2.420304813e-06, Final residual = 0.002474324934, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 5.863181652e-06, Final residual = 0.006283493611, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02099054262, Final residual = 0.001991439516, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003661028242, Final residual = 0.0003341267632, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001916420017, Final residual = 0.0001887181418, No Iterations 8
+time step continuity errors : sum local = 6.625685766e-12, global = -1.783914998e-12, cumulative = 8.074023994e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01914822102, Final residual = 0.001781713401, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003280721126, Final residual = 0.0002923604678, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001715470826, Final residual = 0.0001620558909, No Iterations 8
+time step continuity errors : sum local = 5.665268713e-12, global = -1.752488208e-12, cumulative = 7.898775173e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001296642569, Final residual = 0.0001247650772, No Iterations 7
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0003033090665, Final residual = 9.938456487e-05, No Iterations 5
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0001461894672, Final residual = 9.48353492e-05, No Iterations 1
+time step continuity errors : sum local = 3.314700507e-12, global = -1.741119812e-12, cumulative = 7.724663192e-11
+smoothSolver:  Solving for omega, Initial residual = 0.0001178182437, Final residual = 0.0001191741782, No Iterations 1000
+bounding omega, min: -15.88595828 max: 1247.207851 average: 3.756852819
+smoothSolver:  Solving for k, Initial residual = 0.01654477303, Final residual = 0.01681427922, No Iterations 1000
+bounding k, min: -8.290961169e-06 max: 0.01163422333 average: 0.0002272235704
+PIMPLE: iteration 4
+smoothSolver:  Solving for Ux, Initial residual = 6.539628642e-07, Final residual = 0.002605157229, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 1.689302113e-06, Final residual = 0.006620696429, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1532458257, Final residual = 0.008294036281, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01188860832, Final residual = 0.001170549973, No Iterations 7
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003923192475, Final residual = 0.0003903246477, No Iterations 11
+time step continuity errors : sum local = 1.097979479e-11, global = -1.696159847e-12, cumulative = 7.555047207e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02936096985, Final residual = 0.00270859649, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004975119818, Final residual = 0.0004954839705, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002545542757, Final residual = 0.0002509153533, No Iterations 7
+time step continuity errors : sum local = 6.934933196e-12, global = -1.661733182e-12, cumulative = 7.388873889e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002064271881, Final residual = 0.0001953220254, No Iterations 7
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0004821251086, Final residual = 9.653724634e-05, No Iterations 9
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002788644957, Final residual = 9.615635398e-05, No Iterations 1
+time step continuity errors : sum local = 2.655257955e-12, global = -1.635605543e-12, cumulative = 7.225313335e-11
+smoothSolver:  Solving for omega, Initial residual = 0.000122274189, Final residual = 0.0001169332704, No Iterations 1000
+bounding omega, min: -15.89440697 max: 1247.270254 average: 3.757438581
+smoothSolver:  Solving for k, Initial residual = 0.0167798477, Final residual = 0.01653604584, No Iterations 1000
+bounding k, min: -7.68669413e-06 max: 0.01164332714 average: 0.0002271822893
+ExecutionTime = 34.05 s  ClockTime = 34 s
+
+Courant Number mean: 0.01070038464 max: 0.1572471755
+Time = 0.0007
+
+PIMPLE: iteration 1
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0.07690684981, Final residual = 7.859059805e-05, No Iterations 12
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0.07696981754, Final residual = 8.502211043e-05, No Iterations 7
+FDICPBiCGStab:  Solving for yPsi, Initial residual = 1.100801774e-05, Final residual = 9.970628216e-06, No Iterations 7
+Mesh Courant Number mean: 0.01070069773 max: 0.1233239561
+smoothSolver:  Solving for Ux, Initial residual = 0.0007786131525, Final residual = 0.002479430005, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.001762773776, Final residual = 0.006299328471, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1312259344, Final residual = 0.007854438873, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.008794172231, Final residual = 0.0008188739811, No Iterations 7
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002678734078, Final residual = 0.0002347241896, No Iterations 9
+time step continuity errors : sum local = 7.742417799e-12, global = -7.552633188e-13, cumulative = 7.149787003e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02354669665, Final residual = 0.002169064746, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003664559716, Final residual = 0.0003588782207, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001906759528, Final residual = 0.0001841724521, No Iterations 8
+time step continuity errors : sum local = 6.081592005e-12, global = -7.302226064e-13, cumulative = 7.076764742e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.006343666219, Final residual = 0.0004607594726, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0005521715181, Final residual = 9.476816828e-05, No Iterations 12
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0003084765922, Final residual = 9.858296373e-05, No Iterations 1
+time step continuity errors : sum local = 3.255797699e-12, global = -7.303856175e-13, cumulative = 7.00372618e-11
+smoothSolver:  Solving for omega, Initial residual = 1.419355687e-05, Final residual = 0.0001230189313, No Iterations 1000
+bounding omega, min: -5.60586552 max: 1247.480735 average: 3.799699359
+smoothSolver:  Solving for k, Initial residual = 0.00160374109, Final residual = 0.01732210434, No Iterations 1000
+bounding k, min: -0.0001300268343 max: 0.01762415759 average: 0.0002446643351
+PIMPLE: iteration 2
+smoothSolver:  Solving for Ux, Initial residual = 4.507816927e-05, Final residual = 0.00235309386, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.0001058671357, Final residual = 0.006166802337, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02615744899, Final residual = 0.002457952966, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.00424974824, Final residual = 0.0004210469247, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002332423919, Final residual = 0.0002156156565, No Iterations 9
+time step continuity errors : sum local = 7.020672475e-12, global = -6.555598728e-13, cumulative = 6.938170193e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02085228539, Final residual = 0.001926540137, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003553002624, Final residual = 0.0003149705524, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001856559206, Final residual = 0.0001827390945, No Iterations 7
+time step continuity errors : sum local = 5.91909828e-12, global = -6.458412018e-13, cumulative = 6.873586073e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001599568626, Final residual = 0.0001463754429, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0003278656199, Final residual = 9.747716816e-05, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.000175157799, Final residual = 9.303864749e-05, No Iterations 1
+time step continuity errors : sum local = 3.013315924e-12, global = -6.428861109e-13, cumulative = 6.809297462e-11
+smoothSolver:  Solving for omega, Initial residual = 0.000124467446, Final residual = 0.000120379244, No Iterations 1000
+bounding omega, min: -4.429129347 max: 1247.613418 average: 3.80180621
+smoothSolver:  Solving for k, Initial residual = 0.01205714996, Final residual = 0.01194291269, No Iterations 1000
+bounding k, min: -0.0001299641712 max: 0.01782109093 average: 0.0002450938733
+PIMPLE: iteration 3
+smoothSolver:  Solving for Ux, Initial residual = 2.233797796e-06, Final residual = 0.002349532114, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 5.611835789e-06, Final residual = 0.006151489798, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02286081418, Final residual = 0.002156668191, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003962346384, Final residual = 0.0003574008165, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002072849104, Final residual = 0.0002055953227, No Iterations 8
+time step continuity errors : sum local = 6.683961201e-12, global = -6.115606622e-13, cumulative = 6.748141396e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02080516285, Final residual = 0.001927529929, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003554436108, Final residual = 0.0003509662788, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001808817735, Final residual = 0.000176027325, No Iterations 8
+time step continuity errors : sum local = 5.693529607e-12, global = -5.993459121e-13, cumulative = 6.688206804e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.00144600884, Final residual = 0.0001434519561, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0003256392829, Final residual = 9.952629095e-05, No Iterations 5
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0001580859701, Final residual = 9.550573795e-05, No Iterations 1
+time step continuity errors : sum local = 3.088828664e-12, global = -5.990516983e-13, cumulative = 6.628301635e-11
+smoothSolver:  Solving for omega, Initial residual = 0.0001205194427, Final residual = 0.0001221503042, No Iterations 1000
+bounding omega, min: -5.603301703 max: 1247.552109 average: 3.800909776
+smoothSolver:  Solving for k, Initial residual = 0.01185375342, Final residual = 0.01199633362, No Iterations 1000
+bounding k, min: -0.0001299993057 max: 0.01782381253 average: 0.0002451065062
+PIMPLE: iteration 4
+smoothSolver:  Solving for Ux, Initial residual = 4.441971198e-07, Final residual = 0.002474008863, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 1.195526154e-06, Final residual = 0.006483076917, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1600734627, Final residual = 0.008710951004, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01251143831, Final residual = 0.001240157828, No Iterations 7
+FDICPBiCGStab:  Solving for p, Initial residual = 0.00419873822, Final residual = 0.0004094646292, No Iterations 11
+time step continuity errors : sum local = 1.058442902e-11, global = -5.771618731e-13, cumulative = 6.570585447e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03200743469, Final residual = 0.002937566808, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005418700614, Final residual = 0.0005307903057, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002751782109, Final residual = 0.0002747329324, No Iterations 7
+time step continuity errors : sum local = 6.972724718e-12, global = -5.604255652e-13, cumulative = 6.514542891e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002265244393, Final residual = 0.000216992938, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0005140933936, Final residual = 9.877260884e-05, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002804459369, Final residual = 9.793311415e-05, No Iterations 1
+time step continuity errors : sum local = 2.485353388e-12, global = -5.568449049e-13, cumulative = 6.4588584e-11
+smoothSolver:  Solving for omega, Initial residual = 0.0001243660587, Final residual = 0.0001202860899, No Iterations 1000
+bounding omega, min: -4.429671579 max: 1247.616909 average: 3.801747926
+smoothSolver:  Solving for k, Initial residual = 0.01199096738, Final residual = 0.01184574182, No Iterations 1000
+bounding k, min: -0.0001304390949 max: 0.01785311192 average: 0.0002451568696
+ExecutionTime = 39.87 s  ClockTime = 39 s
+
+Courant Number mean: 0.01070041148 max: 0.1556073493
+Time = 0.0008
+
+PIMPLE: iteration 1
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0.06666152921, Final residual = 8.922755181e-05, No Iterations 10
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0.06670909038, Final residual = 9.453581405e-05, No Iterations 7
+FDICPBiCGStab:  Solving for yPsi, Initial residual = 2.122509728e-05, Final residual = 9.889620389e-06, No Iterations 1
+Mesh Courant Number mean: 0.01070063574 max: 0.1233399358
+smoothSolver:  Solving for Ux, Initial residual = 0.0006953393457, Final residual = 0.002354150694, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.001651555313, Final residual = 0.006170153808, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1410697767, Final residual = 0.008165134393, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.009070283822, Final residual = 0.0008767415028, No Iterations 7
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002870012233, Final residual = 0.0002484265476, No Iterations 9
+time step continuity errors : sum local = 7.668308813e-12, global = 4.735544056e-13, cumulative = 6.506213841e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02531343771, Final residual = 0.002319938306, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003921351666, Final residual = 0.0003838390498, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002032422538, Final residual = 0.0001977109745, No Iterations 8
+time step continuity errors : sum local = 6.118469974e-12, global = 4.732092012e-13, cumulative = 6.553534761e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.006805618473, Final residual = 0.0004897659301, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0005870093101, Final residual = 9.250470779e-05, No Iterations 13
+FDICPBiCGStab:  Solving for p, Initial residual = 0.000340978434, Final residual = 9.57254333e-05, No Iterations 1
+time step continuity errors : sum local = 2.96464368e-12, global = 4.581113665e-13, cumulative = 6.599345898e-11
+smoothSolver:  Solving for omega, Initial residual = 1.640300031e-05, Final residual = 0.0001266110657, No Iterations 1000
+bounding omega, min: -5.424265916 max: 1247.818724 average: 3.833234309
+smoothSolver:  Solving for k, Initial residual = 0.001320891742, Final residual = 0.0124377182, No Iterations 1000
+bounding k, min: -0.0002470278856 max: 0.02725260847 average: 0.0002690389088
+PIMPLE: iteration 2
+smoothSolver:  Solving for Ux, Initial residual = 4.018497097e-05, Final residual = 0.002238193579, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 9.84239133e-05, Final residual = 0.006038897993, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02732443655, Final residual = 0.002612927216, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004514487397, Final residual = 0.0004494946907, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002476357876, Final residual = 0.0002264090285, No Iterations 9
+time step continuity errors : sum local = 6.910268978e-12, global = 5.190585248e-13, cumulative = 6.65125175e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02236201104, Final residual = 0.002057909795, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003791615549, Final residual = 0.0003357076434, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001975045082, Final residual = 0.0001926744129, No Iterations 7
+time step continuity errors : sum local = 5.858319781e-12, global = 5.094863321e-13, cumulative = 6.702200383e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001680041219, Final residual = 0.0001516850295, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0003450164575, Final residual = 9.905111682e-05, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0001815036922, Final residual = 9.49086432e-05, No Iterations 1
+time step continuity errors : sum local = 2.887018471e-12, global = 5.015682889e-13, cumulative = 6.752357212e-11
+smoothSolver:  Solving for omega, Initial residual = 0.0001280359305, Final residual = 0.0001232299427, No Iterations 1000
+bounding omega, min: -5.42447432 max: 1247.95255 average: 3.836287552
+smoothSolver:  Solving for k, Initial residual = 0.008801253534, Final residual = 0.008681711463, No Iterations 1000
+bounding k, min: -0.0002432452106 max: 0.02749767434 average: 0.0002696520066
+PIMPLE: iteration 3
+smoothSolver:  Solving for Ux, Initial residual = 2.073821859e-06, Final residual = 0.002234869804, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 5.321343783e-06, Final residual = 0.006026178447, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02453217848, Final residual = 0.002302713172, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004232760837, Final residual = 0.0003835719392, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0022072589, Final residual = 0.0002198849293, No Iterations 8
+time step continuity errors : sum local = 6.704464898e-12, global = 5.093279048e-13, cumulative = 6.803290003e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02231514753, Final residual = 0.002058721361, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003792055795, Final residual = 0.0003748319542, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001924309227, Final residual = 0.0001861419446, No Iterations 8
+time step continuity errors : sum local = 5.654406113e-12, global = 5.005023817e-13, cumulative = 6.853340241e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001553355605, Final residual = 0.0001514884131, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0003459891661, Final residual = 9.698302741e-05, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0001813550569, Final residual = 9.397876007e-05, No Iterations 1
+time step continuity errors : sum local = 2.856086185e-12, global = 4.907125476e-13, cumulative = 6.902411496e-11
+smoothSolver:  Solving for omega, Initial residual = 0.0001233106219, Final residual = 0.0001255627877, No Iterations 1000
+bounding omega, min: -5.425292098 max: 1247.888731 average: 3.835305624
+smoothSolver:  Solving for k, Initial residual = 0.008614362983, Final residual = 0.008743299031, No Iterations 1000
+bounding k, min: -0.0002436691365 max: 0.02753804227 average: 0.0002696701283
+PIMPLE: iteration 4
+smoothSolver:  Solving for Ux, Initial residual = 3.106934425e-07, Final residual = 0.002353603252, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 8.755989004e-07, Final residual = 0.006351729595, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1649948198, Final residual = 0.009033486137, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0130067575, Final residual = 0.001182314359, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004498948508, Final residual = 0.0004443660997, No Iterations 10
+time step continuity errors : sum local = 1.072803221e-11, global = 4.921043997e-13, cumulative = 6.951621936e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03427257812, Final residual = 0.003148565378, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005806720032, Final residual = 0.0005667278125, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002952011074, Final residual = 0.0002911973895, No Iterations 7
+time step continuity errors : sum local = 6.906631184e-12, global = 4.905208595e-13, cumulative = 7.000674021e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002441617257, Final residual = 0.0002404642912, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0005515369784, Final residual = 9.479662839e-05, No Iterations 9
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0003084771251, Final residual = 9.368890261e-05, No Iterations 1
+time step continuity errors : sum local = 2.222300839e-12, global = 4.764585993e-13, cumulative = 7.048319881e-11
+smoothSolver:  Solving for omega, Initial residual = 0.0001277503182, Final residual = 0.0001232482616, No Iterations 1000
+bounding omega, min: -5.425412768 max: 1247.955911 average: 3.836110309
+smoothSolver:  Solving for k, Initial residual = 0.008743173521, Final residual = 0.008624783101, No Iterations 1000
+bounding k, min: -0.0002440331538 max: 0.02756347114 average: 0.0002697587796
+ExecutionTime = 45.51 s  ClockTime = 45 s
+
+Courant Number mean: 0.0107003488 max: 0.1540016647
+Time = 0.0009
+
+PIMPLE: iteration 1
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0.05882156126, Final residual = 9.5319489e-05, No Iterations 9
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0.05886277695, Final residual = 8.688030605e-05, No Iterations 7
+FDICPBiCGStab:  Solving for yPsi, Initial residual = 1.126410208e-05, Final residual = 9.592702863e-06, No Iterations 1
+Mesh Courant Number mean: 0.01070061862 max: 0.1233625351
+smoothSolver:  Solving for Ux, Initial residual = 0.0006309718829, Final residual = 0.002239344109, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.001564843839, Final residual = 0.006046937741, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1485554559, Final residual = 0.008548236551, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.009496552813, Final residual = 0.0008919245633, No Iterations 7
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003056646796, Final residual = 0.000283924523, No Iterations 9
+time step continuity errors : sum local = 8.289699747e-12, global = 1.451359183e-12, cumulative = 7.1934558e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02690895452, Final residual = 0.002462354589, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004158328363, Final residual = 0.0004051315235, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002149583286, Final residual = 0.0001989950593, No Iterations 9
+time step continuity errors : sum local = 5.831328603e-12, global = 1.426590486e-12, cumulative = 7.336114848e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.007145628292, Final residual = 0.0005032110872, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0006000253278, Final residual = 9.70255749e-05, No Iterations 14
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0003658310995, Final residual = 9.792954923e-05, No Iterations 2
+time step continuity errors : sum local = 2.873049786e-12, global = 1.391383904e-12, cumulative = 7.475253239e-11
+smoothSolver:  Solving for omega, Initial residual = 1.887948276e-05, Final residual = 0.0001310807658, No Iterations 1000
+bounding omega, min: -6.431094659 max: 1248.157325 average: 3.873369273
+smoothSolver:  Solving for k, Initial residual = 0.001090247466, Final residual = 0.009166269934, No Iterations 1000
+bounding k, min: -0.0004323184016 max: 0.04245794509 average: 0.0003027637116
+PIMPLE: iteration 2
+smoothSolver:  Solving for Ux, Initial residual = 3.660250302e-05, Final residual = 0.002135448902, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 9.283809183e-05, Final residual = 0.005922202496, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02838463321, Final residual = 0.002762293203, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004759477054, Final residual = 0.0004465093847, No Iterations 12
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002654907295, Final residual = 0.0002452202821, No Iterations 9
+time step continuity errors : sum local = 7.094147065e-12, global = 1.430597837e-12, cumulative = 7.618313022e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02375140283, Final residual = 0.002182566381, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.00401575963, Final residual = 0.0003664910964, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002093618904, Final residual = 0.0001921095568, No Iterations 8
+time step continuity errors : sum local = 5.53886783e-12, global = 1.398503104e-12, cumulative = 7.758163333e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001781544201, Final residual = 0.0001781377498, No Iterations 5
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0003561820933, Final residual = 9.865845112e-05, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002021058915, Final residual = 9.916713499e-05, No Iterations 1
+time step continuity errors : sum local = 2.861083627e-12, global = 1.383012277e-12, cumulative = 7.89646456e-11
+smoothSolver:  Solving for omega, Initial residual = 0.0001329575717, Final residual = 0.0001284251769, No Iterations 1000
+bounding omega, min: -14.00935956 max: 1248.292207 average: 3.876034839
+smoothSolver:  Solving for k, Initial residual = 0.006533167707, Final residual = 0.006517879537, No Iterations 1000
+bounding k, min: -0.0004274036048 max: 0.04284967225 average: 0.0003036560376
+PIMPLE: iteration 3
+smoothSolver:  Solving for Ux, Initial residual = 1.962946487e-06, Final residual = 0.002133052213, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 5.182883248e-06, Final residual = 0.005910186717, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02606931869, Final residual = 0.002441637066, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004483708417, Final residual = 0.0004151311095, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002336946752, Final residual = 0.000209966124, No Iterations 9
+time step continuity errors : sum local = 6.071343421e-12, global = 1.370568042e-12, cumulative = 8.033521365e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02370304164, Final residual = 0.002185391746, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004015863791, Final residual = 0.0003614616065, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002095134551, Final residual = 0.0001936231445, No Iterations 8
+time step continuity errors : sum local = 5.57997488e-12, global = 1.339012429e-12, cumulative = 8.167422607e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001622190987, Final residual = 0.00016073533, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0003626437988, Final residual = 9.943489459e-05, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002093202893, Final residual = 9.790653404e-05, No Iterations 1
+time step continuity errors : sum local = 2.82356137e-12, global = 1.318213868e-12, cumulative = 8.299243994e-11
+smoothSolver:  Solving for omega, Initial residual = 0.0001294676083, Final residual = 0.0001290615278, No Iterations 1000
+bounding omega, min: -14.00630454 max: 1248.22591 average: 3.874795173
+smoothSolver:  Solving for k, Initial residual = 0.006462535543, Final residual = 0.006473373017, No Iterations 1000
+bounding k, min: -0.0004284112887 max: 0.04294301172 average: 0.0003036322294
+PIMPLE: iteration 4
+smoothSolver:  Solving for Ux, Initial residual = 4.69865663e-07, Final residual = 0.002246494699, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 1.306197725e-06, Final residual = 0.006228898841, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1684723843, Final residual = 0.009292476072, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01337610565, Final residual = 0.001241052945, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004704027968, Final residual = 0.0004690103218, No Iterations 10
+time step continuity errors : sum local = 1.073385035e-11, global = 1.30525045e-12, cumulative = 8.429769039e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03629550038, Final residual = 0.003330620689, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.006148504324, Final residual = 0.0006020649686, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003117103733, Final residual = 0.0003004120299, No Iterations 7
+time step continuity errors : sum local = 6.747431877e-12, global = 1.288229216e-12, cumulative = 8.558591961e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002600103867, Final residual = 0.0002571745408, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0005825152293, Final residual = 9.993282593e-05, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0003443571669, Final residual = 9.972187474e-05, No Iterations 1
+time step continuity errors : sum local = 2.240410099e-12, global = 1.25786441e-12, cumulative = 8.684378402e-11
+smoothSolver:  Solving for omega, Initial residual = 0.0001322010669, Final residual = 0.0001279925727, No Iterations 1000
+bounding omega, min: -14.0201975 max: 1248.295441 average: 3.875780667
+smoothSolver:  Solving for k, Initial residual = 0.006477419537, Final residual = 0.006446379331, No Iterations 1000
+bounding k, min: -0.0004299839565 max: 0.04305400154 average: 0.0003038917877
+ExecutionTime = 50.92 s  ClockTime = 51 s
+
+Courant Number mean: 0.01070033101 max: 0.1524434645
+Time = 0.001
+
+PIMPLE: iteration 1
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0.05265785021, Final residual = 9.441881226e-05, No Iterations 9
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0.05266664396, Final residual = 8.105475933e-05, No Iterations 7
+FDICPBiCGStab:  Solving for yPsi, Initial residual = 9.890556834e-06, Final residual = 9.890556834e-06, No Iterations 0
+Mesh Courant Number mean: 0.01070064558 max: 0.1233868851
+smoothSolver:  Solving for Ux, Initial residual = 0.0005797919617, Final residual = 0.002137406655, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.001491208877, Final residual = 0.005931477111, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1537735407, Final residual = 0.008855264315, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.009795195202, Final residual = 0.0009609631188, No Iterations 7
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003247142315, Final residual = 0.0003186909178, No Iterations 9
+time step continuity errors : sum local = 8.878245145e-12, global = 1.985338159e-12, cumulative = 8.882912218e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0283230508, Final residual = 0.002595192495, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004377039511, Final residual = 0.0004317548546, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002261385911, Final residual = 0.0002173447878, No Iterations 9
+time step continuity errors : sum local = 6.074684459e-12, global = 1.94826468e-12, cumulative = 9.077738686e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.007397824661, Final residual = 0.000526203353, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0006240926264, Final residual = 9.963586543e-05, No Iterations 17
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0004515733929, Final residual = 9.643445867e-05, No Iterations 2
+time step continuity errors : sum local = 2.699683845e-12, global = 1.881741695e-12, cumulative = 9.265912855e-11
+smoothSolver:  Solving for omega, Initial residual = 2.166003462e-05, Final residual = 0.0001361939667, No Iterations 1000
+bounding omega, min: -7.434198418 max: 1248.495887 average: 3.933832261
+smoothSolver:  Solving for k, Initial residual = 0.0008969946878, Final residual = 0.006894377478, No Iterations 1000
+bounding k, min: -0.0007508843432 max: 0.06728439449 average: 0.0003506842879
+PIMPLE: iteration 2
+smoothSolver:  Solving for Ux, Initial residual = 3.39183396e-05, Final residual = 0.002043783909, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 8.84015755e-05, Final residual = 0.005813199356, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02953191807, Final residual = 0.002896364521, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004979237003, Final residual = 0.0004887982191, No Iterations 12
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002804808851, Final residual = 0.000278045575, No Iterations 9
+time step continuity errors : sum local = 7.685403895e-12, global = 1.897401778e-12, cumulative = 9.455653033e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02506078393, Final residual = 0.002300780529, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004228005501, Final residual = 0.0003922107557, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002205166136, Final residual = 0.000204959519, No Iterations 8
+time step continuity errors : sum local = 5.642968169e-12, global = 1.85202323e-12, cumulative = 9.640855356e-11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001869908668, Final residual = 0.0001678498308, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0003796403585, Final residual = 9.962369714e-05, No Iterations 9
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002220265698, Final residual = 9.91400687e-05, No Iterations 1
+time step continuity errors : sum local = 2.731836734e-12, global = 1.822123113e-12, cumulative = 9.823067668e-11
+smoothSolver:  Solving for omega, Initial residual = 0.0001376030827, Final residual = 0.0001331015088, No Iterations 1000
+bounding omega, min: -7.436636126 max: 1248.631739 average: 3.938192415
+smoothSolver:  Solving for k, Initial residual = 0.004918793662, Final residual = 0.004885812613, No Iterations 1000
+bounding k, min: -0.0007414462061 max: 0.0680302584 average: 0.0003519973268
+PIMPLE: iteration 3
+smoothSolver:  Solving for Ux, Initial residual = 1.83859671e-06, Final residual = 0.002041538274, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 5.049095995e-06, Final residual = 0.005801948576, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02749792642, Final residual = 0.002570988105, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004711992256, Final residual = 0.0004494513241, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002474221515, Final residual = 0.0002333984489, No Iterations 9
+time step continuity errors : sum local = 6.450619569e-12, global = 1.796961314e-12, cumulative = 1.00027638e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02499540864, Final residual = 0.00229946835, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004222885425, Final residual = 0.0003847804102, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002202329107, Final residual = 0.0002068612199, No Iterations 8
+time step continuity errors : sum local = 5.69481521e-12, global = 1.7533243e-12, cumulative = 1.017809623e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001717660522, Final residual = 0.0001652793793, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0003811284711, Final residual = 9.893136911e-05, No Iterations 9
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002299777101, Final residual = 9.85605963e-05, No Iterations 1
+time step continuity errors : sum local = 2.715659741e-12, global = 1.721476603e-12, cumulative = 1.035024389e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001330175957, Final residual = 0.0001346436408, No Iterations 1000
+bounding omega, min: -7.438325447 max: 1248.638034 average: 3.936536896
+smoothSolver:  Solving for k, Initial residual = 0.004843217263, Final residual = 0.004894537958, No Iterations 1000
+bounding k, min: -0.0007395149437 max: 0.06791417078 average: 0.0003517348542
+PIMPLE: iteration 4
+smoothSolver:  Solving for Ux, Initial residual = 5.821531748e-07, Final residual = 0.002150172436, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 1.691607181e-06, Final residual = 0.006115208476, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1710906252, Final residual = 0.009498193949, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0136610514, Final residual = 0.001289776121, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004874864923, Final residual = 0.0004705454548, No Iterations 10
+time step continuity errors : sum local = 1.029736019e-11, global = 1.699518187e-12, cumulative = 1.052019571e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03816104175, Final residual = 0.003486749385, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.006445258498, Final residual = 0.0006364529941, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003262109371, Final residual = 0.000322354616, No Iterations 7
+time step continuity errors : sum local = 6.913711196e-12, global = 1.673507625e-12, cumulative = 1.068754647e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002754568675, Final residual = 0.0002751299582, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0006169643751, Final residual = 9.979223303e-05, No Iterations 12
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0004068650973, Final residual = 9.330660222e-05, No Iterations 2
+time step continuity errors : sum local = 2.002189228e-12, global = 1.627620736e-12, cumulative = 1.085030854e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001367875376, Final residual = 0.0001329511511, No Iterations 1000
+bounding omega, min: -7.439019419 max: 1248.638318 average: 3.937648173
+smoothSolver:  Solving for k, Initial residual = 0.004899133985, Final residual = 0.004855551352, No Iterations 1000
+bounding k, min: -0.0007413222081 max: 0.06804258553 average: 0.0003520506196
+ExecutionTime = 56.44 s  ClockTime = 56 s
+
+Courant Number mean: 0.01070035716 max: 0.1509252832
+Time = 0.0011
+
+PIMPLE: iteration 1
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0.04764881467, Final residual = 9.009964959e-05, No Iterations 9
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0.04765154465, Final residual = 9.621214881e-05, No Iterations 6
+FDICPBiCGStab:  Solving for yPsi, Initial residual = 1.084588185e-05, Final residual = 8.342278146e-06, No Iterations 1
+Mesh Courant Number mean: 0.01070066835 max: 0.1234072958
+smoothSolver:  Solving for Ux, Initial residual = 0.0005386330082, Final residual = 0.002045629689, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.001431574613, Final residual = 0.005824936012, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1583949797, Final residual = 0.009064593029, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01007567098, Final residual = 0.0008954577624, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003432254744, Final residual = 0.0003377861757, No Iterations 9
+time step continuity errors : sum local = 9.034085693e-12, global = 1.960399689e-12, cumulative = 1.104634851e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02958722854, Final residual = 0.002689589659, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004557438163, Final residual = 0.0004552186119, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002363543203, Final residual = 0.0002222519042, No Iterations 9
+time step continuity errors : sum local = 5.961322486e-12, global = 1.920409522e-12, cumulative = 1.123838947e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.007607550839, Final residual = 0.0005355689658, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0006379332845, Final residual = 9.961992538e-05, No Iterations 18
+FDICPBiCGStab:  Solving for p, Initial residual = 0.000469052975, Final residual = 9.671214903e-05, No Iterations 2
+time step continuity errors : sum local = 2.598329479e-12, global = 1.849840284e-12, cumulative = 1.142337349e-10
+smoothSolver:  Solving for omega, Initial residual = 2.481791729e-05, Final residual = 0.0001429081488, No Iterations 1000
+bounding omega, min: -8.424468088 max: 1248.909405 average: 3.991202404
+smoothSolver:  Solving for k, Initial residual = 0.0007390900393, Final residual = 0.00528339129, No Iterations 1000
+bounding k, min: -0.001271639175 max: 0.1075753985 average: 0.0004187674617
+PIMPLE: iteration 2
+smoothSolver:  Solving for Ux, Initial residual = 3.121678741e-05, Final residual = 0.001960814315, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 8.38898676e-05, Final residual = 0.005702954707, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03065963486, Final residual = 0.003008564606, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005172498404, Final residual = 0.0005083896379, No Iterations 12
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002911889144, Final residual = 0.0002911628754, No Iterations 9
+time step continuity errors : sum local = 7.732399897e-12, global = 1.844045446e-12, cumulative = 1.160777804e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02629931889, Final residual = 0.002406094905, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004422947967, Final residual = 0.0004116203724, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002304929931, Final residual = 0.0002147148874, No Iterations 8
+time step continuity errors : sum local = 5.677408039e-12, global = 1.797754521e-12, cumulative = 1.178755349e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001950755789, Final residual = 0.000175200186, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.00039652644, Final residual = 9.564914385e-05, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002397679178, Final residual = 9.538763537e-05, No Iterations 1
+time step continuity errors : sum local = 2.524384395e-12, global = 1.763699165e-12, cumulative = 1.196392341e-10
+smoothSolver:  Solving for omega, Initial residual = 0.000144343931, Final residual = 0.0001391125448, No Iterations 1000
+bounding omega, min: -8.429918309 max: 1249.047272 average: 3.997746847
+smoothSolver:  Solving for k, Initial residual = 0.003744758274, Final residual = 0.003711927107, No Iterations 1000
+bounding k, min: -0.001244075829 max: 0.1083379767 average: 0.0004205909209
+PIMPLE: iteration 3
+smoothSolver:  Solving for Ux, Initial residual = 1.73084263e-06, Final residual = 0.001958747769, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 4.942764898e-06, Final residual = 0.005691806914, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02885203963, Final residual = 0.002685566459, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004925903227, Final residual = 0.0004732959915, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002587476521, Final residual = 0.000245933948, No Iterations 9
+time step continuity errors : sum local = 6.531011661e-12, global = 1.737466895e-12, cumulative = 1.21376701e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02621866156, Final residual = 0.00240399495, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004417120787, Final residual = 0.0004037028789, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002300734445, Final residual = 0.0002163903583, No Iterations 8
+time step continuity errors : sum local = 5.72174222e-12, global = 1.693209279e-12, cumulative = 1.230699102e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.00180701029, Final residual = 0.0001792283384, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.000400114192, Final residual = 9.758885211e-05, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002496529512, Final residual = 9.682096082e-05, No Iterations 1
+time step continuity errors : sum local = 2.562323866e-12, global = 1.658641094e-12, cumulative = 1.247285513e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001390295683, Final residual = 0.0001409877987, No Iterations 1000
+bounding omega, min: -8.432674942 max: 1248.973579 average: 3.995309931
+smoothSolver:  Solving for k, Initial residual = 0.003682495339, Final residual = 0.003723795876, No Iterations 1000
+bounding k, min: -0.001239634797 max: 0.1079255004 average: 0.0004202343877
+PIMPLE: iteration 4
+smoothSolver:  Solving for Ux, Initial residual = 5.915799273e-07, Final residual = 0.002062831248, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 1.763342009e-06, Final residual = 0.005999295534, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1729391543, Final residual = 0.009675172079, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01388690711, Final residual = 0.001330364155, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005019300707, Final residual = 0.0004831092238, No Iterations 10
+time step continuity errors : sum local = 1.018174097e-11, global = 1.637483005e-12, cumulative = 1.263660343e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03993363805, Final residual = 0.003638415469, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.006727075207, Final residual = 0.0006651262525, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003400221696, Final residual = 0.0003391386042, No Iterations 7
+time step continuity errors : sum local = 6.995079043e-12, global = 1.61178554e-12, cumulative = 1.279778199e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002895846234, Final residual = 0.0002877813367, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0006449864101, Final residual = 9.822295758e-05, No Iterations 13
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0004411178363, Final residual = 9.926371344e-05, No Iterations 2
+time step continuity errors : sum local = 2.048458257e-12, global = 1.563664917e-12, cumulative = 1.295414848e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001436599726, Final residual = 0.0001388229741, No Iterations 1000
+bounding omega, min: -8.434605303 max: 1249.050153 average: 3.996926335
+smoothSolver:  Solving for k, Initial residual = 0.00372571724, Final residual = 0.003673500178, No Iterations 1000
+bounding k, min: -0.001239723732 max: 0.1079304597 average: 0.0004206640198
+ExecutionTime = 62.12 s  ClockTime = 62 s
+
+Courant Number mean: 0.01070037992 max: 0.1494849063
+Time = 0.0012
+
+PIMPLE: iteration 1
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0.04350996682, Final residual = 9.474534998e-05, No Iterations 7
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0.04352842375, Final residual = 9.728259023e-05, No Iterations 6
+FDICPBiCGStab:  Solving for yPsi, Initial residual = 1.050797722e-05, Final residual = 8.635675597e-06, No Iterations 1
+Mesh Courant Number mean: 0.01070058433 max: 0.1234396233
+smoothSolver:  Solving for Ux, Initial residual = 0.0005037846628, Final residual = 0.001962345757, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.001380462505, Final residual = 0.005714584932, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1621273963, Final residual = 0.009324088469, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01037532547, Final residual = 0.00094381637, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003593154355, Final residual = 0.000351803421, No Iterations 9
+time step continuity errors : sum local = 9.062488992e-12, global = 1.492739031e-12, cumulative = 1.310342238e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03086275481, Final residual = 0.002798502221, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004743545132, Final residual = 0.0004670708731, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002452956903, Final residual = 0.0002423599433, No Iterations 8
+time step continuity errors : sum local = 6.258109603e-12, global = 1.465346431e-12, cumulative = 1.324995703e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.007783774805, Final residual = 0.0005526206275, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0006580649964, Final residual = 9.953466562e-05, No Iterations 15
+FDICPBiCGStab:  Solving for p, Initial residual = 0.000435163649, Final residual = 9.582528635e-05, No Iterations 2
+time step continuity errors : sum local = 2.477352503e-12, global = 1.421896724e-12, cumulative = 1.33921467e-10
+smoothSolver:  Solving for omega, Initial residual = 2.862845891e-05, Final residual = 0.0001512471683, No Iterations 1000
+bounding omega, min: -25.04385281 max: 1249.267269 average: 4.064942831
+smoothSolver:  Solving for k, Initial residual = 0.0006055507909, Final residual = 0.004109830667, No Iterations 1000
+bounding k, min: -0.002044933618 max: 0.1718768533 average: 0.0005188753738
+PIMPLE: iteration 2
+smoothSolver:  Solving for Ux, Initial residual = 2.932752471e-05, Final residual = 0.001883367238, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 8.081485107e-05, Final residual = 0.005588617968, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0319691296, Final residual = 0.0031243494, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005383134517, Final residual = 0.0005020879881, No Iterations 12
+FDICPBiCGStab:  Solving for p, Initial residual = 0.00297909894, Final residual = 0.0002758348443, No Iterations 9
+time step continuity errors : sum local = 7.057071632e-12, global = 1.405135946e-12, cumulative = 1.353266029e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02750536686, Final residual = 0.00273945807, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004798441047, Final residual = 0.0004511132321, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002523039428, Final residual = 0.0002365801339, No Iterations 8
+time step continuity errors : sum local = 6.021566526e-12, global = 1.371827717e-12, cumulative = 1.366984306e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002064780426, Final residual = 0.0001868579933, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0004229257915, Final residual = 9.556561487e-05, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002567567112, Final residual = 9.50182378e-05, No Iterations 1
+time step continuity errors : sum local = 2.42035071e-12, global = 1.34424661e-12, cumulative = 1.380426773e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001529031221, Final residual = 0.0001471064232, No Iterations 1000
+bounding omega, min: -40.55262265 max: 1249.405886 average: 4.072428511
+smoothSolver:  Solving for k, Initial residual = 0.002891456832, Final residual = 0.002882978244, No Iterations 1000
+bounding k, min: -0.002011266027 max: 0.1745139231 average: 0.0005221997104
+PIMPLE: iteration 3
+smoothSolver:  Solving for Ux, Initial residual = 1.67509112e-06, Final residual = 0.001881134852, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 4.904509757e-06, Final residual = 0.005576781483, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03016818301, Final residual = 0.002794706184, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005129517142, Final residual = 0.0004902329094, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002688909009, Final residual = 0.0002495294469, No Iterations 9
+time step continuity errors : sum local = 6.382467615e-12, global = 1.328265524e-12, cumulative = 1.393709428e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02742713314, Final residual = 0.002738565809, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004792475509, Final residual = 0.0004446560254, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002519492989, Final residual = 0.0002362889746, No Iterations 8
+time step continuity errors : sum local = 6.012906988e-12, global = 1.293816267e-12, cumulative = 1.40664759e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.001920736641, Final residual = 0.0001883051593, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0004231880289, Final residual = 9.642176449e-05, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.000262190125, Final residual = 9.571574912e-05, No Iterations 1
+time step continuity errors : sum local = 2.437594398e-12, global = 1.265244465e-12, cumulative = 1.419300035e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001475708137, Final residual = 0.0001481041284, No Iterations 1000
+bounding omega, min: -40.55297818 max: 1249.412021 average: 4.069474714
+smoothSolver:  Solving for k, Initial residual = 0.00286513108, Final residual = 0.00289109568, No Iterations 1000
+bounding k, min: -0.002014644603 max: 0.17480027 average: 0.0005218145505
+PIMPLE: iteration 4
+smoothSolver:  Solving for Ux, Initial residual = 4.969990444e-07, Final residual = 0.001981101658, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 1.536522674e-06, Final residual = 0.005878786573, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1747241044, Final residual = 0.009850740584, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01412414109, Final residual = 0.001365856026, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005161320857, Final residual = 0.0005123967407, No Iterations 10
+time step continuity errors : sum local = 1.04086633e-11, global = 1.252481752e-12, cumulative = 1.431824853e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0416868856, Final residual = 0.00379693931, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.007019954688, Final residual = 0.0006911051265, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003544508394, Final residual = 0.0003534621634, No Iterations 7
+time step continuity errors : sum local = 7.018110363e-12, global = 1.234107107e-12, cumulative = 1.444165924e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003031072029, Final residual = 0.0002978097081, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0006705769577, Final residual = 9.806286076e-05, No Iterations 12
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0004383739001, Final residual = 9.94513888e-05, No Iterations 1
+time step continuity errors : sum local = 1.975108858e-12, global = 1.197520928e-12, cumulative = 1.456141133e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001511756318, Final residual = 0.0001465651583, No Iterations 1000
+bounding omega, min: -40.54666239 max: 1249.412286 average: 4.071064289
+smoothSolver:  Solving for k, Initial residual = 0.002883052762, Final residual = 0.002855686158, No Iterations 1000
+bounding k, min: -0.00201205165 max: 0.174604757 average: 0.0005221400139
+ExecutionTime = 67.9 s  ClockTime = 68 s
+
+Courant Number mean: 0.01070029554 max: 0.1480739285
+Time = 0.0013
+
+PIMPLE: iteration 1
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0.04002682493, Final residual = 9.213971593e-05, No Iterations 9
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0.04005797188, Final residual = 9.345770756e-05, No Iterations 6
+FDICPBiCGStab:  Solving for yPsi, Initial residual = 1.111167296e-05, Final residual = 8.102745307e-06, No Iterations 1
+Mesh Courant Number mean: 0.01070073661 max: 0.1234398524
+smoothSolver:  Solving for Ux, Initial residual = 0.0004737435433, Final residual = 0.001884758137, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.001336290172, Final residual = 0.005600464722, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1646356499, Final residual = 0.009538433869, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0105367723, Final residual = 0.0009710247993, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003756681347, Final residual = 0.0003715406309, No Iterations 9
+time step continuity errors : sum local = 9.240243873e-12, global = 8.516712509e-13, cumulative = 1.464657845e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03204491379, Final residual = 0.002907880312, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004932827078, Final residual = 0.0004905609594, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002555948511, Final residual = 0.0002411606778, No Iterations 9
+time step continuity errors : sum local = 6.003647212e-12, global = 8.385968636e-13, cumulative = 1.473043814e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.007946502931, Final residual = 0.0005741539483, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0006814466925, Final residual = 9.729583481e-05, No Iterations 15
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0004506921816, Final residual = 9.844688906e-05, No Iterations 2
+time step continuity errors : sum local = 2.453441603e-12, global = 8.13437459e-13, cumulative = 1.481178189e-10
+smoothSolver:  Solving for omega, Initial residual = 3.31852976e-05, Final residual = 0.0001617894228, No Iterations 1000
+bounding omega, min: -10.34215955 max: 1249.66532 average: 4.174358651
+smoothSolver:  Solving for k, Initial residual = 0.000498880904, Final residual = 0.003301270786, No Iterations 1000
+bounding k, min: -0.003522468347 max: 0.2840692784 average: 0.0006698603782
+PIMPLE: iteration 2
+smoothSolver:  Solving for Ux, Initial residual = 3.003906706e-05, Final residual = 0.001815513413, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 8.440780885e-05, Final residual = 0.005493041543, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0334683136, Final residual = 0.003299880672, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005668991591, Final residual = 0.0005417017388, No Iterations 12
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003136802523, Final residual = 0.0003002936204, No Iterations 9
+time step continuity errors : sum local = 7.424788109e-12, global = 7.993137416e-13, cumulative = 1.489171326e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02883285669, Final residual = 0.002849340419, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005002345153, Final residual = 0.0004727053801, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002625130453, Final residual = 0.0002449008809, No Iterations 8
+time step continuity errors : sum local = 6.01573591e-12, global = 7.762760795e-13, cumulative = 1.496934087e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002165917114, Final residual = 0.000191914861, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0004379181391, Final residual = 9.859501539e-05, No Iterations 9
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002470133105, Final residual = 9.867672413e-05, No Iterations 1
+time step continuity errors : sum local = 2.425175916e-12, global = 7.606773892e-13, cumulative = 1.504540861e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001632191604, Final residual = 0.0001573067364, No Iterations 1000
+bounding omega, min: -10.36617743 max: 1249.805671 average: 4.186396632
+smoothSolver:  Solving for k, Initial residual = 0.002287011678, Final residual = 0.002298228674, No Iterations 1000
+bounding k, min: -0.003540379366 max: 0.2914570988 average: 0.000676705386
+PIMPLE: iteration 3
+smoothSolver:  Solving for Ux, Initial residual = 1.658246384e-06, Final residual = 0.00181389317, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 4.995059165e-06, Final residual = 0.005480702721, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03158929294, Final residual = 0.002901035851, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005335552267, Final residual = 0.0005027891128, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002785523771, Final residual = 0.0002521447422, No Iterations 9
+time step continuity errors : sum local = 6.230408524e-12, global = 7.572690675e-13, cumulative = 1.512113552e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02872371265, Final residual = 0.002845607984, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004991737115, Final residual = 0.0004626709642, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002622259533, Final residual = 0.0002437204523, No Iterations 8
+time step continuity errors : sum local = 5.983163801e-12, global = 7.348397846e-13, cumulative = 1.519461949e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002011684331, Final residual = 0.0001925933017, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0004369224958, Final residual = 9.389805551e-05, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002643193967, Final residual = 9.282199828e-05, No Iterations 1
+time step continuity errors : sum local = 2.279990072e-12, global = 7.164197484e-13, cumulative = 1.526626147e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001565705134, Final residual = 0.0001581340777, No Iterations 1000
+bounding omega, min: -10.38089156 max: 1249.724616 average: 4.181910441
+smoothSolver:  Solving for k, Initial residual = 0.002263010369, Final residual = 0.002281869905, No Iterations 1000
+bounding k, min: -0.003505839653 max: 0.2890162223 average: 0.0006745752504
+PIMPLE: iteration 4
+smoothSolver:  Solving for Ux, Initial residual = 4.179646726e-07, Final residual = 0.001910967245, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 1.299066261e-06, Final residual = 0.005780444107, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1763749614, Final residual = 0.01002030415, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01435637232, Final residual = 0.001402265906, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005308936306, Final residual = 0.0005186863483, No Iterations 10
+time step continuity errors : sum local = 1.01892842e-11, global = 7.139796535e-13, cumulative = 1.533765943e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.04354998196, Final residual = 0.004346361264, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.007650103929, Final residual = 0.000746142646, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003890520321, Final residual = 0.0003860471769, No Iterations 7
+time step continuity errors : sum local = 7.402814045e-12, global = 7.061296837e-13, cumulative = 1.54082724e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003211161252, Final residual = 0.0003125706274, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0007068308014, Final residual = 9.757336164e-05, No Iterations 12
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0004578648448, Final residual = 9.889566461e-05, No Iterations 1
+time step continuity errors : sum local = 1.896399034e-12, global = 6.812687931e-13, cumulative = 1.547639928e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001603127725, Final residual = 0.0001566579141, No Iterations 1000
+bounding omega, min: -10.39121228 max: 1249.808216 average: 4.183931564
+smoothSolver:  Solving for k, Initial residual = 0.002284834827, Final residual = 0.002278889386, No Iterations 1000
+bounding k, min: -0.003542224394 max: 0.2918286347 average: 0.0006770396137
+ExecutionTime = 73.71 s  ClockTime = 73 s
+
+Courant Number mean: 0.01070044608 max: 0.1467596033
+Time = 0.0014
+
+PIMPLE: iteration 1
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0.03708004448, Final residual = 8.478851929e-05, No Iterations 7
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0.03709965841, Final residual = 9.553218439e-05, No Iterations 4
+FDICPBiCGStab:  Solving for yPsi, Initial residual = 1.050846184e-05, Final residual = 7.75443938e-06, No Iterations 1
+Mesh Courant Number mean: 0.01070060739 max: 0.1234874162
+smoothSolver:  Solving for Ux, Initial residual = 0.0004491694188, Final residual = 0.001817329343, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.001299315043, Final residual = 0.00550539919, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1666941092, Final residual = 0.009834955085, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01081231695, Final residual = 0.001026766718, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003933059913, Final residual = 0.000373088679, No Iterations 9
+time step continuity errors : sum local = 8.987440543e-12, global = 2.034247865e-13, cumulative = 1.549674176e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03326050149, Final residual = 0.003007783891, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005110620662, Final residual = 0.0005078821958, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002635482922, Final residual = 0.0002584419518, No Iterations 8
+time step continuity errors : sum local = 6.228675194e-12, global = 2.033697885e-13, cumulative = 1.551707874e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.008070933916, Final residual = 0.0005867082585, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0006964022847, Final residual = 9.984304819e-05, No Iterations 13
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0004089993616, Final residual = 9.866507128e-05, No Iterations 2
+time step continuity errors : sum local = 2.379458948e-12, global = 1.87686454e-13, cumulative = 1.553584738e-10
+smoothSolver:  Solving for omega, Initial residual = 3.903261801e-05, Final residual = 0.0001765102487, No Iterations 1000
+bounding omega, min: -32.95713794 max: 1250.01562 average: 4.301457921
+smoothSolver:  Solving for k, Initial residual = 0.0004117540352, Final residual = 0.002731484462, No Iterations 1000
+bounding k, min: -0.005914903088 max: 0.4849269884 average: 0.0009086696001
+PIMPLE: iteration 2
+smoothSolver:  Solving for Ux, Initial residual = 2.750228849e-05, Final residual = 0.001750886942, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 7.860206557e-05, Final residual = 0.005383905029, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03467130232, Final residual = 0.003378185466, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005842034568, Final residual = 0.0005661192892, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003118323127, Final residual = 0.0002872694188, No Iterations 9
+time step continuity errors : sum local = 6.87872292e-12, global = 1.709695236e-13, cumulative = 1.555294434e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02997657692, Final residual = 0.002943453393, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005167170814, Final residual = 0.0004799420123, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002715814699, Final residual = 0.0002516300328, No Iterations 8
+time step continuity errors : sum local = 5.981770649e-12, global = 1.614750906e-13, cumulative = 1.556909185e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002240494496, Final residual = 0.0001977454219, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0004539409304, Final residual = 9.378547473e-05, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002672226176, Final residual = 9.284053413e-05, No Iterations 1
+time step continuity errors : sum local = 2.207694053e-12, global = 1.515558177e-13, cumulative = 1.558424743e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001786232517, Final residual = 0.0001713856466, No Iterations 1000
+bounding omega, min: -50.79644238 max: 1250.156527 average: 4.319524987
+smoothSolver:  Solving for k, Initial residual = 0.001847506613, Final residual = 0.001870682572, No Iterations 1000
+bounding k, min: -0.00608977189 max: 0.4998471876 average: 0.0009221906952
+PIMPLE: iteration 3
+smoothSolver:  Solving for Ux, Initial residual = 1.564356072e-06, Final residual = 0.001748234576, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 4.737494089e-06, Final residual = 0.005370167791, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03286428591, Final residual = 0.003003861034, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005523616399, Final residual = 0.0005220346852, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002888360743, Final residual = 0.0002580038145, No Iterations 9
+time step continuity errors : sum local = 6.17185207e-12, global = 1.599319897e-13, cumulative = 1.560024063e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02988281831, Final residual = 0.002941069877, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005160859394, Final residual = 0.0004808215073, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002711862318, Final residual = 0.0002540218477, No Iterations 8
+time step continuity errors : sum local = 6.033290643e-12, global = 1.467912636e-13, cumulative = 1.561491975e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002092507983, Final residual = 0.0001988875936, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0004522663474, Final residual = 9.562765365e-05, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002717274508, Final residual = 9.447078675e-05, No Iterations 1
+time step continuity errors : sum local = 2.244492438e-12, global = 1.372998309e-13, cumulative = 1.562864974e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001713545589, Final residual = 0.0001708864861, No Iterations 1000
+bounding omega, min: -50.79599846 max: 1250.16251 average: 4.312168875
+smoothSolver:  Solving for k, Initial residual = 0.001845585774, Final residual = 0.001851787248, No Iterations 1000
+bounding k, min: -0.006068847759 max: 0.4983360141 average: 0.0009196026437
+PIMPLE: iteration 4
+smoothSolver:  Solving for Ux, Initial residual = 3.761879465e-07, Final residual = 0.001842064767, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 1.159775665e-06, Final residual = 0.005666445338, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1778945853, Final residual = 0.01019125564, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01459418391, Final residual = 0.001438885964, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.00544388131, Final residual = 0.00052984526, No Iterations 10
+time step continuity errors : sum local = 1.007268807e-11, global = 1.448334743e-13, cumulative = 1.564313308e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.04526963671, Final residual = 0.004494321336, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.007910334149, Final residual = 0.0007746123445, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004024813827, Final residual = 0.0003640521744, No Iterations 8
+time step continuity errors : sum local = 6.749712219e-12, global = 1.450340742e-13, cumulative = 1.565763649e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003361969037, Final residual = 0.000304869265, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0007060973422, Final residual = 9.91833496e-05, No Iterations 12
+FDICPBiCGStab:  Solving for p, Initial residual = 0.000439029833, Final residual = 9.910336377e-05, No Iterations 1
+time step continuity errors : sum local = 1.836839328e-12, global = 1.343049293e-13, cumulative = 1.567106698e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001756969229, Final residual = 0.0001711499173, No Iterations 1000
+bounding omega, min: -50.80214611 max: 1250.162758 average: 4.319983708
+smoothSolver:  Solving for k, Initial residual = 0.001853517051, Final residual = 0.001861179672, No Iterations 1000
+bounding k, min: -0.006131732069 max: 0.5032945016 average: 0.0009237805174
+ExecutionTime = 79.31 s  ClockTime = 79 s
+
+Courant Number mean: 0.01070031757 max: 0.145409076
+Time = 0.0015
+
+PIMPLE: iteration 1
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0.03450988339, Final residual = 9.665622555e-05, No Iterations 7
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0.03455361469, Final residual = 9.473074634e-05, No Iterations 6
+FDICPBiCGStab:  Solving for yPsi, Initial residual = 9.348954673e-06, Final residual = 9.348954673e-06, No Iterations 0
+Mesh Courant Number mean: 0.01070062755 max: 0.1234923211
+smoothSolver:  Solving for Ux, Initial residual = 0.0004243594272, Final residual = 0.001751122834, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.001253651981, Final residual = 0.005393740849, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1691025339, Final residual = 0.009909136126, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01087296781, Final residual = 0.001046192238, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004008706285, Final residual = 0.0003944292354, No Iterations 9
+time step continuity errors : sum local = 9.21392043e-12, global = -3.671093522e-13, cumulative = 1.563435605e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03441472322, Final residual = 0.003107482074, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005278717147, Final residual = 0.0005185060619, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002728523991, Final residual = 0.0002695532495, No Iterations 8
+time step continuity errors : sum local = 6.295748279e-12, global = -3.552195212e-13, cumulative = 1.55988341e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.008206385274, Final residual = 0.0005992859898, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0007110281849, Final residual = 9.563304512e-05, No Iterations 15
+FDICPBiCGStab:  Solving for p, Initial residual = 0.000474433966, Final residual = 9.723852341e-05, No Iterations 2
+time step continuity errors : sum local = 2.272198478e-12, global = -3.608238856e-13, cumulative = 1.556275171e-10
+smoothSolver:  Solving for omega, Initial residual = 4.707030347e-05, Final residual = 0.0001968517359, No Iterations 1000
+bounding omega, min: -12.11120466 max: 1250.427917 average: 4.500886997
+smoothSolver:  Solving for k, Initial residual = 0.0003421711491, Final residual = 0.002360531681, No Iterations 1000
+bounding k, min: -0.01080452544 max: 0.861665433 average: 0.00130957457
+PIMPLE: iteration 2
+smoothSolver:  Solving for Ux, Initial residual = 2.491064294e-05, Final residual = 0.001692090139, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 7.328862351e-05, Final residual = 0.005288841841, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03534379843, Final residual = 0.003463757327, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005971536612, Final residual = 0.0005596901607, No Iterations 12
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003307849501, Final residual = 0.0003040091727, No Iterations 9
+time step continuity errors : sum local = 7.062581738e-12, global = -3.620519445e-13, cumulative = 1.552654651e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03121387156, Final residual = 0.003039504729, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005347811547, Final residual = 0.0005075949714, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002810414761, Final residual = 0.0002656110301, No Iterations 8
+time step continuity errors : sum local = 6.121738792e-12, global = -3.662172684e-13, cumulative = 1.548992479e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002310963717, Final residual = 0.0002067280886, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0004683330513, Final residual = 9.736065589e-05, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0002758040703, Final residual = 9.672672167e-05, No Iterations 1
+time step continuity errors : sum local = 2.22959364e-12, global = -3.676382271e-13, cumulative = 1.545316096e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001994184238, Final residual = 0.0001918965446, No Iterations 1000
+bounding omega, min: -12.10265035 max: 1250.570309 average: 4.532640048
+smoothSolver:  Solving for k, Initial residual = 0.001548073987, Final residual = 0.001609394674, No Iterations 1000
+bounding k, min: -0.01133303987 max: 0.9052584528 average: 0.001343732096
+PIMPLE: iteration 3
+smoothSolver:  Solving for Ux, Initial residual = 1.456720088e-06, Final residual = 0.001689606079, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 4.47486052e-06, Final residual = 0.00527425767, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03419908835, Final residual = 0.003400090543, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005936236172, Final residual = 0.0005720875102, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003141300459, Final residual = 0.0002819184913, No Iterations 9
+time step continuity errors : sum local = 6.540436089e-12, global = -3.480903646e-13, cumulative = 1.541835193e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03112652876, Final residual = 0.003043433465, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.00534714876, Final residual = 0.0004991747453, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002814379627, Final residual = 0.0002636431762, No Iterations 8
+time step continuity errors : sum local = 6.068426352e-12, global = -3.509966526e-13, cumulative = 1.538325226e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002176218089, Final residual = 0.0002063400919, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0004681809106, Final residual = 9.983051512e-05, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.000281235424, Final residual = 9.894165098e-05, No Iterations 1
+time step continuity errors : sum local = 2.277718706e-12, global = -3.523926224e-13, cumulative = 1.5348013e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001899444779, Final residual = 0.0001904097088, No Iterations 1000
+bounding omega, min: -12.10207696 max: 1250.481991 average: 4.521760193
+smoothSolver:  Solving for k, Initial residual = 0.001561534707, Final residual = 0.001564351607, No Iterations 1000
+bounding k, min: -0.01123402117 max: 0.8976899833 average: 0.001337241742
+PIMPLE: iteration 4
+smoothSolver:  Solving for Ux, Initial residual = 3.731386405e-07, Final residual = 0.001780343651, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 1.17534313e-06, Final residual = 0.005565958759, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1794552443, Final residual = 0.01037122656, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01483882892, Final residual = 0.001480530168, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0055945868, Final residual = 0.0005430574844, No Iterations 10
+time step continuity errors : sum local = 1.000991849e-11, global = -3.356831603e-13, cumulative = 1.531444468e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.04708494383, Final residual = 0.004646058668, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.008189265648, Final residual = 0.0008043758564, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004171513418, Final residual = 0.0003826135364, No Iterations 8
+time step continuity errors : sum local = 6.872333037e-12, global = -3.257575265e-13, cumulative = 1.528186893e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003502534161, Final residual = 0.0003187993058, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0007347816058, Final residual = 9.983543802e-05, No Iterations 13
+FDICPBiCGStab:  Solving for p, Initial residual = 0.00047502451, Final residual = 9.801679323e-05, No Iterations 2
+time step continuity errors : sum local = 1.759445227e-12, global = -3.222182332e-13, cumulative = 1.524964711e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001932813288, Final residual = 0.0001900976739, No Iterations 1000
+bounding omega, min: -12.10240835 max: 1250.572536 average: 4.526913037
+smoothSolver:  Solving for k, Initial residual = 0.001564842065, Final residual = 0.001575151971, No Iterations 1000
+bounding k, min: -0.01137454206 max: 0.9087813148 average: 0.001346026893
+ExecutionTime = 84.97 s  ClockTime = 85 s
+
+Courant Number mean: 0.0107003369 max: 0.1457690241
+Time = 0.0016
+
+PIMPLE: iteration 1
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0.03228838257, Final residual = 8.435593782e-05, No Iterations 9
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0.03233572648, Final residual = 8.35207397e-05, No Iterations 4
+FDICPBiCGStab:  Solving for yPsi, Initial residual = 1.187989563e-05, Final residual = 8.357843637e-06, No Iterations 1
+Mesh Courant Number mean: 0.01070083036 max: 0.1235037482
+smoothSolver:  Solving for Ux, Initial residual = 0.0004029792948, Final residual = 0.001692465001, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.001212404727, Final residual = 0.005298117431, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1712903722, Final residual = 0.0101958272, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01117280025, Final residual = 0.001106355253, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004196480984, Final residual = 0.0004115521906, No Iterations 9
+time step continuity errors : sum local = 9.32475287e-12, global = -7.295852576e-13, cumulative = 1.517668858e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03573698511, Final residual = 0.003220414652, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005471556007, Final residual = 0.0005444305588, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002835715448, Final residual = 0.0002559584056, No Iterations 9
+time step continuity errors : sum local = 5.795100333e-12, global = -7.130267603e-13, cumulative = 1.510538591e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.008341617563, Final residual = 0.0005997800138, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0007163079701, Final residual = 9.521384681e-05, No Iterations 15
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0004667605098, Final residual = 9.70693493e-05, No Iterations 2
+time step continuity errors : sum local = 2.198392361e-12, global = -7.121849127e-13, cumulative = 1.503416741e-10
+smoothSolver:  Solving for omega, Initial residual = 5.841790603e-05, Final residual = 0.0002286138357, No Iterations 1000
+bounding omega, min: -12.85884064 max: 1250.835225 average: 4.770101381
+smoothSolver:  Solving for k, Initial residual = 0.0002897878745, Final residual = 0.002187977346, No Iterations 1000
+bounding k, min: -0.02141852076 max: 1.62390834 average: 0.002037744307
+PIMPLE: iteration 2
+smoothSolver:  Solving for Ux, Initial residual = 2.47387999e-05, Final residual = 0.001642482062, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 7.383084771e-05, Final residual = 0.005216757232, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03696017419, Final residual = 0.003622188171, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.006221738822, Final residual = 0.0005902811947, No Iterations 12
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003448768102, Final residual = 0.0003221510784, No Iterations 9
+time step continuity errors : sum local = 7.262928392e-12, global = -7.029841384e-13, cumulative = 1.4963869e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03260881072, Final residual = 0.003154145726, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005555586627, Final residual = 0.0005341821831, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002923673979, Final residual = 0.0002795980244, No Iterations 8
+time step continuity errors : sum local = 6.247518058e-12, global = -7.020836999e-13, cumulative = 1.489366063e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002417943666, Final residual = 0.0002171052262, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0004894281372, Final residual = 9.219125334e-05, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0003050250498, Final residual = 9.159168732e-05, No Iterations 1
+time step continuity errors : sum local = 2.046781721e-12, global = -6.959357815e-13, cumulative = 1.482406705e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0002324283552, Final residual = 0.0002240342716, No Iterations 1000
+bounding omega, min: -12.84993422 max: 1250.879846 average: 4.830976657
+smoothSolver:  Solving for k, Initial residual = 0.001370316758, Final residual = 0.001452935443, No Iterations 1000
+bounding k, min: -0.02274818887 max: 1.727040731 average: 0.002123292392
+PIMPLE: iteration 3
+smoothSolver:  Solving for Ux, Initial residual = 1.532745718e-06, Final residual = 0.001640419375, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 4.870552719e-06, Final residual = 0.005206196205, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03580807185, Final residual = 0.003520526551, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.006153742373, Final residual = 0.0006019505122, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003270159284, Final residual = 0.0002984113823, No Iterations 9
+time step continuity errors : sum local = 6.716047752e-12, global = -6.68589073e-13, cumulative = 1.475720815e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03251881853, Final residual = 0.003155328642, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005551748494, Final residual = 0.0005234766488, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.00292732231, Final residual = 0.0002759535454, No Iterations 8
+time step continuity errors : sum local = 6.156092422e-12, global = -6.651654985e-13, cumulative = 1.46906916e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002270416791, Final residual = 0.0002149206578, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0004857917255, Final residual = 9.354971704e-05, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.000307296762, Final residual = 9.248552793e-05, No Iterations 1
+time step continuity errors : sum local = 2.063482751e-12, global = -6.589075529e-13, cumulative = 1.462480084e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0002206417133, Final residual = 0.0002196486574, No Iterations 1000
+bounding omega, min: -12.84960856 max: 1250.98071 average: 4.812106738
+smoothSolver:  Solving for k, Initial residual = 0.001402892925, Final residual = 0.001397959176, No Iterations 1000
+bounding k, min: -0.02256838403 max: 1.721187593 average: 0.0021136709
+PIMPLE: iteration 4
+smoothSolver:  Solving for Ux, Initial residual = 4.977795067e-07, Final residual = 0.001729073752, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 1.658098496e-06, Final residual = 0.00549667735, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1812564706, Final residual = 0.01058087753, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.015119068, Final residual = 0.001470821551, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005723320438, Final residual = 0.0005556824468, No Iterations 10
+time step continuity errors : sum local = 9.942370649e-12, global = -6.359995757e-13, cumulative = 1.456120088e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.04909065838, Final residual = 0.004810554682, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.008491713896, Final residual = 0.0008439202555, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004329293099, Final residual = 0.0004052231973, No Iterations 8
+time step continuity errors : sum local = 7.064186536e-12, global = -6.209464046e-13, cumulative = 1.449910624e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003660688869, Final residual = 0.0003346929669, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.000765987321, Final residual = 9.728417821e-05, No Iterations 15
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0005136223707, Final residual = 9.76038341e-05, No Iterations 2
+time step continuity errors : sum local = 1.700429062e-12, global = -6.047667543e-13, cumulative = 1.443862957e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0002228182495, Final residual = 0.000221695874, No Iterations 1000
+bounding omega, min: -12.84962034 max: 1250.885503 average: 4.820989681
+smoothSolver:  Solving for k, Initial residual = 0.00140125351, Final residual = 0.001418417831, No Iterations 1000
+bounding k, min: -0.02301287071 max: 1.746415011 average: 0.002132886779
+ExecutionTime = 90.6 s  ClockTime = 90 s
+
+Courant Number mean: 0.01070053914 max: 0.1477747763
+Time = 0.0017
+
+PIMPLE: iteration 1
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0.03034730223, Final residual = 7.185020966e-05, No Iterations 7
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0.03037907446, Final residual = 9.91295633e-05, No Iterations 4
+FDICPBiCGStab:  Solving for yPsi, Initial residual = 1.064847038e-05, Final residual = 8.011958097e-06, No Iterations 1
+Mesh Courant Number mean: 0.01070063859 max: 0.1235495901
+smoothSolver:  Solving for Ux, Initial residual = 0.0003842085284, Final residual = 0.001643232565, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.001175508563, Final residual = 0.005229491572, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1733641509, Final residual = 0.01059170275, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0115745727, Final residual = 0.001108238916, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004388347108, Final residual = 0.0004337099259, No Iterations 9
+time step continuity errors : sum local = 9.538361462e-12, global = -8.449003982e-13, cumulative = 1.435413953e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03714169781, Final residual = 0.003331494404, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005665320729, Final residual = 0.0005587050398, No Iterations 10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002940082291, Final residual = 0.0002859466663, No Iterations 8
+time step continuity errors : sum local = 6.28473334e-12, global = -8.272834415e-13, cumulative = 1.427141118e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.008448590301, Final residual = 0.0006325063316, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0007480933822, Final residual = 9.729330445e-05, No Iterations 14
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0004537651713, Final residual = 9.718071248e-05, No Iterations 2
+time step continuity errors : sum local = 2.136768391e-12, global = -8.268431707e-13, cumulative = 1.418872687e-10
+smoothSolver:  Solving for omega, Initial residual = 7.661346401e-05, Final residual = 0.0002808215682, No Iterations 1000
+bounding omega, min: -13.52673912 max: 1251.275027 average: 5.212677788
+smoothSolver:  Solving for k, Initial residual = 0.0002530319617, Final residual = 0.002206561115, No Iterations 1000
+bounding k, min: -0.04267806981 max: 3.320305496 average: 0.003537189271
+PIMPLE: iteration 2
+smoothSolver:  Solving for Ux, Initial residual = 2.395294892e-05, Final residual = 0.001592927905, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 7.232551571e-05, Final residual = 0.005136052372, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03874771428, Final residual = 0.003737444734, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.006476914555, Final residual = 0.0006372950028, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003461760861, Final residual = 0.000328594282, No Iterations 9
+time step continuity errors : sum local = 7.193680844e-12, global = -8.083181121e-13, cumulative = 1.410789505e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03386551487, Final residual = 0.00325196413, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005730104626, Final residual = 0.0005472286938, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003021618878, Final residual = 0.0002883576903, No Iterations 8
+time step continuity errors : sum local = 6.256968029e-12, global = -8.000767029e-13, cumulative = 1.402788738e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002502395596, Final residual = 0.0002245097737, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0005083656068, Final residual = 9.827074757e-05, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0003206875557, Final residual = 9.735426913e-05, No Iterations 1
+time step continuity errors : sum local = 2.11251275e-12, global = -7.909283069e-13, cumulative = 1.394879455e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0002899942829, Final residual = 0.0002803237055, No Iterations 1000
+bounding omega, min: -13.51697355 max: 1251.315809 average: 5.342682202
+smoothSolver:  Solving for k, Initial residual = 0.001291750724, Final residual = 0.001482504938, No Iterations 1000
+bounding k, min: -0.04751161799 max: 3.701444958 average: 0.003830361496
+PIMPLE: iteration 3
+smoothSolver:  Solving for Ux, Initial residual = 1.543836695e-06, Final residual = 0.001589985005, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 4.998355247e-06, Final residual = 0.005129219933, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03725319622, Final residual = 0.003633487402, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.006361188464, Final residual = 0.0006273483803, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.00337946554, Final residual = 0.0003103558001, No Iterations 9
+time step continuity errors : sum local = 6.784666207e-12, global = -7.602798973e-13, cumulative = 1.387276656e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03383543786, Final residual = 0.003256068744, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005736373687, Final residual = 0.0005456272147, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003025494381, Final residual = 0.0002894190336, No Iterations 8
+time step continuity errors : sum local = 6.270303475e-12, global = -7.553130199e-13, cumulative = 1.379723526e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002364092304, Final residual = 0.0002243753394, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0005053200664, Final residual = 9.890962639e-05, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0003236119068, Final residual = 9.783494491e-05, No Iterations 1
+time step continuity errors : sum local = 2.119700526e-12, global = -7.46478085e-13, cumulative = 1.372258745e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0002772281371, Final residual = 0.0002718335379, No Iterations 1000
+bounding omega, min: -13.51645835 max: 1251.421441 average: 5.329067486
+smoothSolver:  Solving for k, Initial residual = 0.001369381406, Final residual = 0.001369645417, No Iterations 1000
+bounding k, min: -0.04783753292 max: 3.725409884 average: 0.003847103913
+PIMPLE: iteration 4
+smoothSolver:  Solving for Ux, Initial residual = 5.709225197e-07, Final residual = 0.001676187558, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 1.891299554e-06, Final residual = 0.00542030072, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1828591305, Final residual = 0.01080132175, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01539916328, Final residual = 0.001510140767, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005867051505, Final residual = 0.0005728026381, No Iterations 10
+time step continuity errors : sum local = 9.975410857e-12, global = -7.217620138e-13, cumulative = 1.365041125e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.05098750622, Final residual = 0.00496265594, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.008763510409, Final residual = 0.0007660120947, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004560582813, Final residual = 0.0004521736663, No Iterations 7
+time step continuity errors : sum local = 7.661799823e-12, global = -7.057608095e-13, cumulative = 1.357983517e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003701835974, Final residual = 0.0003490501124, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0007976208195, Final residual = 9.852786859e-05, No Iterations 16
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0005492308515, Final residual = 9.554156383e-05, No Iterations 2
+time step continuity errors : sum local = 1.617659985e-12, global = -6.817285865e-13, cumulative = 1.351166231e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0002818738104, Final residual = 0.0002756684139, No Iterations 1000
+bounding omega, min: -13.51665513 max: 1251.321362 average: 5.338334244
+smoothSolver:  Solving for k, Initial residual = 0.001374009899, Final residual = 0.001390216869, No Iterations 1000
+bounding k, min: -0.04873861323 max: 3.795651601 average: 0.003901491872
+ExecutionTime = 96.49 s  ClockTime = 96 s
+
+Courant Number mean: 0.01070034818 max: 0.1495535016
+Time = 0.0018
+
+PIMPLE: iteration 1
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0.02859660702, Final residual = 8.108825519e-05, No Iterations 7
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0.02865728906, Final residual = 8.633915441e-05, No Iterations 6
+FDICPBiCGStab:  Solving for yPsi, Initial residual = 9.49139464e-06, Final residual = 9.49139464e-06, No Iterations 0
+Mesh Courant Number mean: 0.01070065925 max: 0.1235545924
+smoothSolver:  Solving for Ux, Initial residual = 0.0003657384093, Final residual = 0.001592894685, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.001137531867, Final residual = 0.005151229125, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1755059642, Final residual = 0.0106390325, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01160843719, Final residual = 0.001122520243, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004427983896, Final residual = 0.0003855950728, No Iterations 10
+time step continuity errors : sum local = 8.260061948e-12, global = -7.262255354e-13, cumulative = 1.343903976e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03839095006, Final residual = 0.003431024247, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005849639929, Final residual = 0.0005299023145, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003093617276, Final residual = 0.0002941852474, No Iterations 8
+time step continuity errors : sum local = 6.293148382e-12, global = -7.147098922e-13, cumulative = 1.336756877e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.008553444943, Final residual = 0.0006404622714, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0007589047135, Final residual = 9.887167624e-05, No Iterations 15
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0004907949516, Final residual = 9.772865683e-05, No Iterations 2
+time step continuity errors : sum local = 2.091441059e-12, global = -7.127401383e-13, cumulative = 1.329629476e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001105578862, Final residual = 0.0003887990893, No Iterations 1000
+bounding omega, min: -22.52868635 max: 1351.27552 average: 6.078853928
+smoothSolver:  Solving for k, Initial residual = 0.0002341184127, Final residual = 0.002574885486, No Iterations 1000
+bounding k, min: -0.1054061069 max: 8.103813792 average: 0.007504954596
+PIMPLE: iteration 2
+smoothSolver:  Solving for Ux, Initial residual = 2.174796441e-05, Final residual = 0.001550722054, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 6.722480715e-05, Final residual = 0.005094509435, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.04002131444, Final residual = 0.003827125294, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.006632251127, Final residual = 0.0006291242483, No Iterations 12
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003659606442, Final residual = 0.0003416641147, No Iterations 9
+time step continuity errors : sum local = 7.298481008e-12, global = -6.863140104e-13, cumulative = 1.322766335e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03552471428, Final residual = 0.003361011934, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005950141522, Final residual = 0.0005807232011, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003130926237, Final residual = 0.0003044136505, No Iterations 8
+time step continuity errors : sum local = 6.438637445e-12, global = -6.8606342e-13, cumulative = 1.315905701e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002610647913, Final residual = 0.000235175353, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0005260844796, Final residual = 9.850767241e-05, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0003320944426, Final residual = 9.909762177e-05, No Iterations 1
+time step continuity errors : sum local = 2.096071613e-12, global = -6.787377074e-13, cumulative = 1.309118324e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0004180485237, Final residual = 0.0004055008195, No Iterations 1000
+bounding omega, min: -37.99122319 max: 1564.417383 average: 6.459010578
+smoothSolver:  Solving for k, Initial residual = 0.001340132614, Final residual = 0.001752555015, No Iterations 1000
+bounding k, min: -0.1286747415 max: 9.918730092 average: 0.008868303569
+PIMPLE: iteration 3
+smoothSolver:  Solving for Ux, Initial residual = 1.727102828e-06, Final residual = 0.001549935228, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 5.560895113e-06, Final residual = 0.005103547874, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03945754469, Final residual = 0.003770739352, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.00662789489, Final residual = 0.0006597173017, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003513768034, Final residual = 0.0003286213172, No Iterations 9
+time step continuity errors : sum local = 7.012899404e-12, global = -6.51401026e-13, cumulative = 1.302604314e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03570391932, Final residual = 0.003374296695, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.005977470149, Final residual = 0.0005719116935, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003143609632, Final residual = 0.0003029767923, No Iterations 8
+time step continuity errors : sum local = 6.39967076e-12, global = -6.495288702e-13, cumulative = 1.296109025e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.002503759073, Final residual = 0.0002346462077, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0005263328026, Final residual = 9.449686826e-05, No Iterations 12
+FDICPBiCGStab:  Solving for p, Initial residual = 0.000354910837, Final residual = 9.397484973e-05, No Iterations 1
+time step continuity errors : sum local = 1.985038356e-12, global = -6.395496008e-13, cumulative = 1.289713529e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0003993405579, Final residual = 0.0003916870274, No Iterations 1000
+bounding omega, min: -37.99390775 max: 1601.772013 average: 6.482457218
+smoothSolver:  Solving for k, Initial residual = 0.001498278073, Final residual = 0.001571963667, No Iterations 1000
+bounding k, min: -0.1402295494 max: 10.43625929 average: 0.009269317868
+PIMPLE: iteration 4
+smoothSolver:  Solving for Ux, Initial residual = 7.856309826e-07, Final residual = 0.001633906466, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 2.502703164e-06, Final residual = 0.005420121443, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.1845693183, Final residual = 0.01117664368, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01586560687, Final residual = 0.001572421636, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.006052963289, Final residual = 0.0006032706579, No Iterations 10
+time step continuity errors : sum local = 1.029227435e-11, global = -6.171392185e-13, cumulative = 1.283542137e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.05403989021, Final residual = 0.005151790155, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.009161201638, Final residual = 0.0008040009284, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004739873562, Final residual = 0.0004736406822, No Iterations 7
+time step continuity errors : sum local = 7.839973637e-12, global = -6.027931597e-13, cumulative = 1.277514205e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003942575765, Final residual = 0.000364141269, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0008323290943, Final residual = 9.84226147e-05, No Iterations 16
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0005672807625, Final residual = 9.538717796e-05, No Iterations 2
+time step continuity errors : sum local = 1.57767409e-12, global = -5.795628591e-13, cumulative = 1.271718577e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0004260535246, Final residual = 0.000409895598, No Iterations 1000
+bounding omega, min: -37.99011743 max: 1673.154926 average: 6.557737731
+smoothSolver:  Solving for k, Initial residual = 0.001534246683, Final residual = 0.001616705135, No Iterations 1000
+bounding k, min: -0.1436920317 max: 11.0794875 average: 0.00975048068
+ExecutionTime = 102.64 s  ClockTime = 102 s
+
+Courant Number mean: 0.01070036773 max: 0.1511803049
+Time = 0.0019
+
+PIMPLE: iteration 1
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0.02705419071, Final residual = 9.125541719e-05, No Iterations 7
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0.02711569759, Final residual = 7.231289766e-05, No Iterations 4
+FDICPBiCGStab:  Solving for yPsi, Initial residual = 1.065538303e-05, Final residual = 8.324180305e-06, No Iterations 1
+Mesh Courant Number mean: 0.01070067791 max: 0.1235820632
+smoothSolver:  Solving for Ux, Initial residual = 0.0003496289991, Final residual = 0.001553357466, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 0.00110535557, Final residual = 0.005136797857, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.177358125, Final residual = 0.0109610582, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.01195991596, Final residual = 0.001165512344, No Iterations 8
+FDICPBiCGStab:  Solving for p, Initial residual = 0.004559949527, Final residual = 0.0004059208435, No Iterations 10
+time step continuity errors : sum local = 8.489994651e-12, global = -4.638771986e-13, cumulative = 1.267079805e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.04039508979, Final residual = 0.003558202721, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.006116123764, Final residual = 0.000551030896, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003213102905, Final residual = 0.0003003966032, No Iterations 8
+time step continuity errors : sum local = 6.266568149e-12, global = -4.567981998e-13, cumulative = 1.262511823e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.008673488075, Final residual = 0.0006534665174, No Iterations 1
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0007760498183, Final residual = 9.625458699e-05, No Iterations 15
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0004930544577, Final residual = 9.880693107e-05, No Iterations 2
+time step continuity errors : sum local = 2.062232804e-12, global = -4.619146213e-13, cumulative = 1.257892677e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0001977754891, Final residual = 0.0007461965644, No Iterations 1000
+bounding omega, min: -50.75136839 max: 3687.358834 average: 8.677757199
+smoothSolver:  Solving for k, Initial residual = 0.0002487669824, Final residual = 0.004080278715, No Iterations 1000
+bounding k, min: -0.4211092824 max: 31.22404972 average: 0.0258496151
+PIMPLE: iteration 2
+smoothSolver:  Solving for Ux, Initial residual = 2.068252806e-05, Final residual = 0.001534852683, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 6.554656917e-05, Final residual = 0.005316496381, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 0.04653742266, Final residual = 0.004224578726, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.007423410679, Final residual = 0.0007105994695, No Iterations 12
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003929712433, Final residual = 0.000389097805, No Iterations 9
+time step continuity errors : sum local = 8.174904955e-12, global = -4.359058622e-13, cumulative = 1.253533618e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.04126461785, Final residual = 0.003737694429, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.006726667547, Final residual = 0.0006374523306, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003384745383, Final residual = 0.0003382993779, No Iterations 8
+time step continuity errors : sum local = 6.985305076e-12, global = -4.296522743e-13, cumulative = 1.249237095e-10
+FDICPBiCGStab:  Solving for p, Initial residual = 0.003090113694, Final residual = 0.0003062899921, No Iterations 5
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0005946071703, Final residual = 9.604728565e-05, No Iterations 14
+FDICPBiCGStab:  Solving for p, Initial residual = 0.0004427480761, Final residual = 9.813921743e-05, No Iterations 1
+time step continuity errors : sum local = 2.026141776e-12, global = -4.272158741e-13, cumulative = 1.244964937e-10
+smoothSolver:  Solving for omega, Initial residual = 0.0009049616855, Final residual = 0.0009334138728, No Iterations 1000
+bounding omega, min: -73.51660457 max: 5351.246626 average: 11.28604681
+smoothSolver:  Solving for k, Initial residual = 0.001599576119, Final residual = 0.003364752901, No Iterations 1000
+bounding k, min: -0.7636949421 max: 56.97393089 average: 0.04557498756
+PIMPLE: iteration 3
+smoothSolver:  Solving for Ux, Initial residual = 3.889071874e-06, Final residual = 1.268211997e+23, No Iterations 1000
+smoothSolver:  Solving for Uy, Initial residual = 1.239255921e-05, Final residual = 1.078868081e+24, No Iterations 1000
+FDICPBiCGStab:  Solving for p, Initial residual = 1, Final residual = 0.09194754115, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.08656657891, Final residual = 0.008512621304, No Iterations 17
+FDICPBiCGStab:  Solving for p, Initial residual = 0.03889780438, Final residual = 0.004085170277, No Iterations 20
+time step continuity errors : sum local = 3.769034791e+15, global = 2.047444022e+14, cumulative = 2.047444022e+14
+FDICPBiCGStab:  Solving for p, Initial residual = 1, Final residual = 0.09010515387, No Iterations 3
+FDICPBiCGStab:  Solving for p, Initial residual = 0.08126085701, Final residual = 0.007756638271, No Iterations 11
+FDICPBiCGStab:  Solving for p, Initial residual = 0.04566869834, Final residual = 0.004562763411, No Iterations 20
+time step continuity errors : sum local = 1.638512572e+28, global = 1.420920697e+28, cumulative = 1.420920697e+28
+FDICPBiCGStab:  Solving for p, Initial residual = 1, Final residual = 0.09653701383, No Iterations 2
+FDICPBiCGStab:  Solving for p, Initial residual = 0.083949182, Final residual = 0.008236534773, No Iterations 6
+FDICPBiCGStab:  Solving for p, Initial residual = 0.02982731865, Final residual = 0.002960353684, No Iterations 17
+time step continuity errors : sum local = 5.3121418e+56, global = 4.982196705e+56, cumulative = 4.982196705e+56
+#0  Foam::error::printStack(Foam::Ostream&) at ??:?
+#1  Foam::sigFpe::sigHandler(int) at ??:?
+#2  ? in /lib/x86_64-linux-gnu/libpthread.so.0
+#3  Foam::symGaussSeidelSmoother::smooth(Foam::word const&, Foam::Field<double>&, Foam::lduMatrix const&, Foam::Field<double> const&, Foam::FieldField<Foam::Field, double> const&, Foam::UPtrList<Foam::lduInterfaceField const> const&, unsigned char, int) at ??:?
+#4  Foam::symGaussSeidelSmoother::smooth(Foam::Field<double>&, Foam::Field<double> const&, unsigned char, int) const at ??:?
+#5  Foam::smoothSolver::solve(Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+#6  Foam::fvMatrix<double>::solveSegregated(Foam::dictionary const&) at ??:?
+#7  Foam::fvMatrix<double>::solveSegregatedOrCoupled(Foam::dictionary const&) at ??:?
+#8  Foam::fvMesh::solve(Foam::fvMatrix<double>&, Foam::dictionary const&) const at ??:?
+#9  Foam::SolverPerformance<double> Foam::solve<double>(Foam::tmp<Foam::fvMatrix<double> > const&) at ??:?
+#10  Foam::kOmegaSSTBase<Foam::eddyViscosity<Foam::RASModel<Foam::IncompressibleTurbulenceModel<Foam::transportModel> > > >::correct() at ??:?
+#11  ? in /usr/lib/openfoam/openfoam2012/platforms/linux64GccDPInt32Opt/bin/pimpleFoam
+#12  __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+#13  ? in /usr/lib/openfoam/openfoam2012/platforms/linux64GccDPInt32Opt/bin/pimpleFoam
